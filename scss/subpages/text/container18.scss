@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "ponur";
+    src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+.container18{
+    
+    width: 96vw;
+    height: 40vw;
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+   
+
+    .container18-textbox{
+        
+        overflow: hidden;
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+
+
+        span{
+            font-size: 3.8vw;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: transparent;
+            background-image: url('https://www.publicdomainpictures.net/pictures/130000/t2/gray-gradient-background.jpg'); 
+            background-size: 200%; /* Enlarged for smooth animation */
+            background-position: 0 50%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animation2  5s infinite alternate linear;
+        }
+        @keyframes animation2 {
+            0% {
+                background-position: 0 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+       
+    }
+    
+
+    .container18-codebox{
+
+        overflow: hidden;
+        
+
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        
+        display: flex;
+        
+
+        pre{
+            width: 30vw;
+            font-size: 1vw;
+            font-family: "ponur";
+        }
+
+    }
+
+}

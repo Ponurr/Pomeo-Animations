@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "ponur";
+  src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.container16 {
+  width: 96vw;
+  height: 40vw;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container16 .container16-textbox {
+  overflow: hidden;
+  width: 40vw;
+  height: 30vw;
+  border: 1.1vw solid black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.container16 .container16-textbox span {
+  width: 30vw;
+  font-size: 1.8vw;
+  font-family: "ponur";
+  animation: jump 2s ease 0s infinite normal forwards;
+}
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateY(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateY(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateY(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateY(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(-1.2deg);
+  }
+}
+.container16 .container16-codebox {
+  overflow: hidden;
+  width: 40vw;
+  height: 30vw;
+  border: 1.1vw solid black;
+  display: flex;
+}
+.container16 .container16-codebox pre {
+  width: 30vw;
+  font-size: 1vw;
+  font-family: "ponur";
+}
+
+/*# sourceMappingURL=container16.css.map */
