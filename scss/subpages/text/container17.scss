@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "ponur";
+    src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+.container17{
+    
+    width: 96vw;
+    height: 40vw;
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+   
+
+    .container17-textbox{
+        
+        overflow: hidden;
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        overflow: hidden;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        
+         color: #ccc;
+
+       
+
+     
+h1 {
+  margin: 0;
+  height: 12vmin;
+  width: 22vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -26vmin;
+  left: 29vmin;
+  width: 62vmin;
+  height: 62vmin;
+  border-radius: 50%;
+  border: 1.3vmin solid currentColor;
+  box-sizing: border-box;
+}
+
+em {
+  font-family: 'ponur', sans-serif;
+  color: currentColor;
+  font-size: 5vmin;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+  color: black;
+}
+a {
+    color: purple !important;
+
+
+
+
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+  opacity: 0;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 20vmin 5vmin;
+  transform-origin: 13vmin 5vmin;
+  color: purple;
+}
+
+em.planet.right {
+  -webkit-transform-origin: 0vmin 5vmin;
+  transform-origin: -7vmin 5vmin;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+       
+        
+
+    }
+    
+
+    .container17-codebox{
+
+        overflow: hidden;
+        
+
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        
+        display: flex;
+        
+
+        pre{
+            width: 30vw;
+            font-size: 1vw;
+            font-family: "ponur";
+        }
+
+    }
+
+}
