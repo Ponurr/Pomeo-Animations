@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "ponur";
+    src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+.container14{
+    
+    width: 96vw;
+    height: 40vw;
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+   
+
+    .container14-textbox{
+        
+        overflow: hidden;
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        
+
+
+        span{
+          position: absolute;
+          transform: translate(-50%, -50%);
+            width: 35vw;
+            font-size: 2.8vw;
+            font-family: "ponur";
+            font-weight: 300;
+            letter-spacing: 0.12vw;
+            text-transform: uppercase;
+           
+            left: 19.5vw;
+            
+            animation: effect 15s linear infinite;
+            &:nth-child(1){
+              color: transparent;
+              -webkit-text-stroke: 0.18vw #000000;
+
+            }
+            &:nth-child(2){
+
+              color: #000000;
+              animation: animate 4s ease-in-out infinite;
+            }
+        }
+       
+
+        @keyframes animate {
+          0%,
+          100% {
+            clip-path: polygon(
+              0% 45%,
+              16% 44%,
+              33% 50%,
+              54% 60%,
+              70% 61%,
+              84% 59%,
+              100% 52%,
+              100% 100%,
+              0% 100%
+            );
+          }
+        
+          50% {
+            clip-path: polygon(
+              0% 60%,
+              15% 65%,
+              34% 66%,
+              51% 62%,
+              67% 50%,
+              84% 45%,
+              100% 46%,
+              100% 100%,
+              0% 100%
+            );
+          }
+        }
+        
+
+    }
+    
+
+    .container14-codebox{
+
+        overflow: hidden;
+        
+
+        width: 40vw;
+        height: 30vw;
+        border: 1.1vw solid black;
+        
+        display: flex;
+        
+
+        pre{
+            width: 30vw;
+            font-size: 1vw;
+            font-family: "ponur";
+        }
+
+    }
+
+}
