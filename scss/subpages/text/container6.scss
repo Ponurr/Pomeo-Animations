@@ -1,11 +1,10 @@
-
 @font-face {
     font-family: "ponur";
     src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
   }
-.container{
+.container6{
     
     width: 96vw;
     height: 40vw;
@@ -15,23 +14,9 @@
     align-items: center;
     justify-content: space-evenly;
 
-    .container-title1{
-        display: flex;
-        top: 7vw;
-        left: 23.5vw;
-        position: absolute;
-        span{
-            font-size: 2.4vw;
-            color:  purple;
-            font-weight: 650;
-            font-family: "ponur";
-            
-        }
+   
 
-
-    }
-
-    .container-textbox{
+    .container6-textbox{
         
         overflow: hidden;
         width: 40vw;
@@ -40,38 +25,38 @@
         align-items: center;
         display: flex;
         justify-content: center;
+        
+
 
         span{
             width: 30vw;
             font-size: 1.8vw;
             font-family: "ponur";
-            animation: slideLeftRight 3s infinite linear;
+            animation: bouncing 1.5s infinite ease-out;
         }
-        @keyframes slideLeftRight {
+        @keyframes bouncing {
             0%, 100% {
-                transform: translateX(0);
+                transform: translateY(0);
             }
-            50% {
-                transform: translateX(20px);
+            20% {
+                transform: translateY(-10px);
+            }
+            40% {
+                transform: translateY(5px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+            80% {
+                transform: translateY(2px);
             }
         }
-    }
-    .container-title2{
-        display: flex;
-        top: 7vw;
-        left: 62.5vw;
-        position: absolute;
-        span{
-            font-size: 2.4vw;
-            color:  purple;
-            font-weight: 650;
-            font-family: "ponur";
-        }
-
+      
 
     }
+    
 
-    .container-codebox{
+    .container6-codebox{
 
         overflow: hidden;
         

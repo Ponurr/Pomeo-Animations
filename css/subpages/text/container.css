@@ -37,6 +37,15 @@
   width: 30vw;
   font-size: 1.8vw;
   font-family: "ponur";
+  animation: slideLeftRight 3s infinite linear;
+}
+@keyframes slideLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
 }
 .container .container-title2 {
   display: flex;

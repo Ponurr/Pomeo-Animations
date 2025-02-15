@@ -1,11 +1,10 @@
-
 @font-face {
     font-family: "ponur";
     src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
   }
-.container{
+.container12{
     
     width: 96vw;
     height: 40vw;
@@ -15,23 +14,9 @@
     align-items: center;
     justify-content: space-evenly;
 
-    .container-title1{
-        display: flex;
-        top: 7vw;
-        left: 23.5vw;
-        position: absolute;
-        span{
-            font-size: 2.4vw;
-            color:  purple;
-            font-weight: 650;
-            font-family: "ponur";
-            
-        }
+   
 
-
-    }
-
-    .container-textbox{
+    .container12-textbox{
         
         overflow: hidden;
         width: 40vw;
@@ -40,38 +25,34 @@
         align-items: center;
         display: flex;
         justify-content: center;
+        
+
 
         span{
             width: 30vw;
             font-size: 1.8vw;
             font-family: "ponur";
-            animation: slideLeftRight 3s infinite linear;
+            animation: blurEffect 2s infinite ease-in-out;
+
+
         }
-        @keyframes slideLeftRight {
-            0%, 100% {
-                transform: translateX(0);
+        @keyframes blurEffect {
+            0% {
+                filter: blur(0px);
             }
             50% {
-                transform: translateX(20px);
+                filter: blur(5px);
+            }
+            100% {
+                filter: blur(0px);
             }
         }
-    }
-    .container-title2{
-        display: flex;
-        top: 7vw;
-        left: 62.5vw;
-        position: absolute;
-        span{
-            font-size: 2.4vw;
-            color:  purple;
-            font-weight: 650;
-            font-family: "ponur";
-        }
-
+        
 
     }
+    
 
-    .container-codebox{
+    .container12-codebox{
 
         overflow: hidden;
         
