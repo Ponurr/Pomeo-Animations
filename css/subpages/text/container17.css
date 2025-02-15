@@ -75,13 +75,13 @@
   opacity: 0;
 }
 .container17 .container17-textbox em.planet.left {
-  -webkit-transform-origin: 20vmin 5vmin;
-  transform-origin: 13vmin 5vmin;
+  -webkit-transform-origin: 20vw 5vw;
+  transform-origin: 10vw 2vw;
   color: purple;
 }
 .container17 .container17-textbox em.planet.right {
-  -webkit-transform-origin: 0vmin 5vmin;
-  transform-origin: -7vmin 5vmin;
+  -webkit-transform-origin: 0vw 5vw;
+  transform-origin: -4.8vw 3vw;
 }
 @-webkit-keyframes planet-rotate {
   to {
