@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "ponur";
+  src: url("../../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.container18 {
+  width: 96vw;
+  height: 40vw;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container18 .container18-textbox {
+  overflow: hidden;
+  width: 40vw;
+  height: 30vw;
+  border: 1.1vw solid black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.container18 .container18-textbox span {
+  font-size: 3.8vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: transparent;
+  background-image: url("https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: 200%; /* Enlarged for smooth animation */
+  background-position: 0 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animation2 5s infinite alternate linear;
+}
+@keyframes animation2 {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.container18 .container18-codebox {
+  overflow: hidden;
+  width: 40vw;
+  height: 30vw;
+  border: 1.1vw solid black;
+  display: flex;
+}
+.container18 .container18-codebox pre {
+  width: 30vw;
+  font-size: 1vw;
+  font-family: "ponur";
+}
+
+/*# sourceMappingURL=container18.css.map */
