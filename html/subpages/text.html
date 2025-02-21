@@ -1142,13 +1142,72 @@ em.planet.right {
   </div>
   <div class="container20-codebox">
     <pre id="codeText">
-      @keyframes neonGlow {
-        0% {
-          text-shadow: 0 0 5px #ff00d4, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
-          transform: ease-in-out infinite, bounce 2s ease-in-out infinite;
-
-    }
-      }</pre>
+      $colors: #00ff4c, #D61C59, #E7D84B, #ff7ee3, #000000;
+      $stroke-width: 0.2vw; // Grubość konturu tekstu
+      $animation-duration: 3s; 
+      
+      .container20 {
+          width: 96vw;
+          height: 40vw;
+          background-color: rgb(255, 255, 255);
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+      
+          .container20-textbox {
+              position: relative;
+              overflow: hidden;
+              width: 40vw;
+              height: 30vw;
+              border: 1.1vw solid black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+      
+              svg {
+                  width: 100%;
+                  height: 100%;
+              }
+      
+              text {
+                  font-size: 4.6vw;
+                  font-family: "Arial", sans-serif;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  fill: white; // Wypełnienie tekstu
+                  stroke-width: $stroke-width;
+              }
+      
+              .text-copy {
+                  fill: none;
+                  stroke-width: $stroke-width;
+                  stroke-linecap: round;
+                  stroke-dasharray: 0, 100%; // Początkowo ukryty tekst
+                  animation: draw-text $animation-duration forwards ease-in-out infinite;
+      
+                  @for $i from 1 through length($colors) {
+                      &:nth-child(#{$i}) {
+                          stroke: nth($colors, $i);
+                          animation-delay: ($i - 1) * 0.2s;
+                      }
+                  }
+              }
+          }
+      }
+      
+      @keyframes draw-text {
+          0% {
+              stroke-dasharray: 0, 100%;
+          }
+          50% {
+              stroke-dasharray: 100%, 0;
+          }
+          100% {
+              stroke-dasharray: 0, 100%;
+          }
+      }
+      
+          </pre>
   <button onclick="copyCode(this)">Kopiuj</button>
 </div>
     
