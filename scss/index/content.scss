@@ -95,16 +95,24 @@
     display: flex;
 
     span{
-        color: #EBEBEB;
+        cursor: pointer;
+        color: #4b0452;
         align-self: center;
         display: flex;
         position: relative;
-        left: -41.5vw;
+        left: -85vw;
+        top: 0.5vw;
         font-size: 2vw;
         font-family: 'ponur';
+        filter:grayscale(10);
+        transition: all 0.8s;
+        &:hover{
+            filter: grayscale(0);
+        }
     }
 
     img{
+        cursor: pointer;
         filter:grayscale(10);
         width: 4vw;
         height: 4vw;
