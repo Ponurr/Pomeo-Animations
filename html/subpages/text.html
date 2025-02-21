@@ -56,9 +56,25 @@
                 <span>KOD ŹRÓDŁOWY</span>
             </div>
             <div class="container-codebox">
-                <pre>@KEYHOTKEYS</pre>
-   
-               </div>
+              <pre id="codeText">
+                span{
+                width: 30vw;
+                font-size: 1.8vw;
+                font-family: "ponur";
+                animation: slideLeftRight 3s infinite linear;
+            }
+            @keyframes slideLeftRight {
+                0%, 100% {
+                    transform: translateX(0);
+                }
+                50% {
+                    transform: translateX(20px);
+                }
+            }</pre>
+            <button onclick="copyCode(this)">Kopiuj</button>
+          </div>
+      
+          <textarea id="hiddenTextarea"></textarea>
                
 
                
@@ -77,9 +93,25 @@
           </div>
           
           <div class="container2-codebox">
-              <pre>@KEYHOTKEYS</pre>
- 
-             </div>
+            <pre id="codeText">
+              span{
+                width: 30vw;
+                font-size: 1.8vw;
+                font-family: "ponur";
+                animation: pulse 2s infinite ease-in-out;
+            }
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }</pre>
+          <button onclick="copyCode(this)">Kopiuj</button>
+        </div>
+    
+        
              
 
             
@@ -93,9 +125,23 @@
         </div>
         
         <div class="container3-codebox">
-            <pre>@KEYHOTKEYS</pre>
-
-           </div>
+          <pre id="codeText">
+            span{
+              width: 30vw;
+              font-size: 1.8vw;
+              font-family: "ponur";
+              animation: rotateBox 2s infinite ease-in-out;
+          }
+          @keyframes rotateBox {
+              0%, 100% {
+                  transform: rotate(0deg);
+              }
+              50% {
+                  transform: rotate(10deg);
+              }
+          }</pre>
+        <button onclick="copyCode(this)">Kopiuj</button>
+      </div>
            
 
           
@@ -109,9 +155,33 @@
       </div>
       
       <div class="container4-codebox">
-          <pre>@KEYHOTKEYS</pre>
+        <pre id="codeText">
+          span{
+            width: 30vw;
+            font-size: 1.8vw;
+            font-family: "ponur";
+            animation: bgColorChange 4s infinite linear;
 
-         </div>
+        }
+        @keyframes bgColorChange {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: blue;
+            }
+            50% {
+                background-color: green;
+            }
+            75% {
+                background-color: yellow;
+            }
+            100% {
+                background-color: red;
+            }
+        }</pre>
+      <button onclick="copyCode(this)">Kopiuj</button>
+    </div>
          
 
         
@@ -125,10 +195,24 @@
     </div>
     
     <div class="container5-codebox">
-        <pre>@KEYHOTKEYS</pre>
+      <pre id="codeText">
+        span{
+          width: 30vw;
+          font-size: 1.8vw;
+          font-family: "ponur";
+          animation: bounceUpDown 2s infinite ease-in-out;
 
-       </div>
-       
+      }
+      @keyframes bounceUpDown {
+          0%, 100% {
+              transform: translateY(0);
+          }
+          50% {
+              transform: translateY(-20px);
+          }
+      }</pre>
+    <button onclick="copyCode(this)">Kopiuj</button>
+  </div>
 
       
 </section>
@@ -141,9 +225,32 @@
   </div>
   
   <div class="container6-codebox">
-      <pre>@KEYHOTKEYS</pre>
-
-     </div>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: bouncing 1.5s infinite ease-out;
+    }
+    @keyframes bouncing {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(-10px);
+        }
+        40% {
+            transform: translateY(5px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+        80% {
+            transform: translateY(2px);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -157,9 +264,23 @@
   </div>
   
   <div class="container7-codebox">
-      <pre>@KEYHOTKEYS</pre>
-
-     </div>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: flicker 1.5s infinite ease-in-out;
+    }
+    @keyframes flicker {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.2;
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -174,9 +295,24 @@
   </div>
   
   <div class="container8-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: stretch 2s infinite ease-in-out;
 
-     </div>
+    }
+    @keyframes stretch {
+        0%, 100% {
+            transform: scaleX(1);
+        }
+        50% {
+            transform: scaleX(1.2);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -190,9 +326,28 @@
   </div>
   
   <div class="container9-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: rotate3D 3s infinite linear;
 
-     </div>
+
+    }
+    @keyframes rotate3D {
+        0% {
+            transform: rotateY(0deg);
+        }
+        50% {
+            transform: rotateY(180deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -206,9 +361,25 @@
   </div>
   
   <div class="container10-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: wave 1.5s infinite ease-in-out;
 
-     </div>
+
+    }
+    @keyframes wave {
+        0%, 100% {
+            transform: skewX(0deg);
+        }
+        50% {
+            transform: skewX(10deg);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -222,9 +393,24 @@
   </div>
   
   <div class="container11-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: shake 0.3s infinite;
 
-     </div>
+
+    }
+    @keyframes shake {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(-5px, 0); }
+        50% { transform: translate(5px, 0); }
+        75% { transform: translate(-5px, 0); }
+        100% { transform: translate(0, 0); }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -238,9 +424,28 @@
   </div>
   
   <div class="container12-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: blurEffect 2s infinite ease-in-out;
 
-     </div>
+
+    }
+    @keyframes blurEffect {
+        0% {
+            filter: blur(0px);
+        }
+        50% {
+            filter: blur(5px);
+        }
+        100% {
+            filter: blur(0px);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -255,9 +460,109 @@
   </div>
   
   <div class="container13-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: effect 2s infinite ease-in-out;
 
-     </div>
+
+    }
+    span:after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        line-height: 48px;
+        left: 30%;
+        top: 50%;
+        animation: effect 7.5s linear infinite;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes effect {
+        0% {
+            content: "Ponur";
+          }
+          4% {
+            content: "to";
+          }
+          8% {
+            content: "giga";
+          }
+          12% {
+            content: "szef ";
+          }
+          16% {
+            content: "";
+          }
+          20% {
+            content: "Po";
+          }
+          24% {
+            content: "Ponu";
+          }
+          28% {
+            content: "Ponur ";
+          }
+          32% {
+            content: "Ponu ";
+          }
+          36% {
+            content: "Ponur  ";
+          }
+          40% {
+            content: "Ponur t  ";
+          }
+          44% {
+            content: "Ponur to ";
+          }
+          48% {
+            content: "Ponur to s";
+          }
+          52% {
+            content: "Ponur to sze";
+          }
+          56% {
+            content: "Ponur to sz";
+          }
+          60% {
+            content: "Ponur to sze";
+          }
+          64% {
+            content: "Ponur to szef";
+          }
+          68% {
+            content: "Ponur to szef i ";
+          }
+          72% {
+            content: "Ponur to szef i gi";
+          }
+          76% {
+            content: "Ponur to szef i g";
+          }
+          80% {
+            content: "Ponur to szef i giga";
+          }
+          84% {
+            content: "Ponur to szef i giga k";
+          }
+          88% {
+            content: "Ponur to szef i giga ko";
+          }
+          92% {
+            content: "Ponur to szef i giga koc";
+          }
+          96% {
+            content: "Ponur to szef i giga kocu";
+          }
+          100% {
+            content: "Ponur to szef i giga kocur";
+          }
+       
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -274,9 +579,65 @@
   </div>
   
   <div class="container14-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        position: absolute;
+        transform: translate(-50%, -50%);
+          width: 35vw;
+          font-size: 2.8vw;
+          font-family: "ponur";
+          font-weight: 300;
+          letter-spacing: 0.12vw;
+          text-transform: uppercase;
+         
+          left: 19.5vw;
+          
+          animation: effect 15s linear infinite;
+          &:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 0.18vw #000000;
 
-     </div>
+          }
+          &:nth-child(2){
+
+            color: #000000;
+            animation: animate 4s ease-in-out infinite;
+          }
+      }
+     
+
+      @keyframes animate {
+        0%,
+        100% {
+          clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      
+        50% {
+          clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -295,9 +656,92 @@
   </div>
   
   <div class="container17-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+     
+h1 {
+  margin: 0;
+  height: 12vmin;
+  width: 22vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
-     </div>
+h1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -26vmin;
+  left: 29vmin;
+  width: 62vmin;
+  height: 62vmin;
+  border-radius: 50%;
+  border: 1.3vmin solid currentColor;
+  box-sizing: border-box;
+}
+
+em {
+  font-family: 'ponur', sans-serif;
+  color: currentColor;
+  font-size: 5vmin;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+  color: black;
+}
+a {
+    color: purple !important;
+
+
+
+
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+  opacity: 0;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 20vw 5vw;
+  transform-origin: 10vw 2vw;
+  color: purple;
+}
+
+em.planet.right {
+  -webkit-transform-origin: 0vw 5vw;
+  transform-origin: -4.8vw 3vw;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -318,9 +762,54 @@
   </div>
   
   <div class="container15-codebox">
-      <pre>@KEYHOTKEYS</pre>
-
-     </div>
+    <pre id="codeText">
+      span {
+        display: inline-block;
+        width: 35vw;
+        font-size: 3.8vw;
+        font-family: "ponur";
+        font-weight: 300;
+        position: relative;
+        
+  
+        text-transform: uppercase;
+        animation: animate1 2s infinite;
+        animation-delay: calc(.2s * var(--i));
+  
+        
+  
+        &:nth-child(1) {
+          left: 8vw;
+  
+        }
+        &:nth-child(2) {
+          left: 5.2vw;
+        }
+        &:nth-child(3) {
+          left: 3vw;
+        }
+        &:nth-child(4) {
+          left: 0.7vw;
+        }
+        &:nth-child(5){
+          left: -1.65vw;
+        }
+        &:nth-child(6) {
+          left: -4.2vw;
+        }
+        &:nth-child(7) {
+          left: -7.2vw;
+        }
+      }
+  
+      @keyframes animate1 {
+        0%,
+        80% {
+          transform: rotateY(360deg);
+        }
+      }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -335,9 +824,30 @@
   </div>
   
   <div class="container18-codebox">
-      <pre>@KEYHOTKEYS</pre>
-
-     </div>
+    <pre id="codeText">
+      span{
+        font-size: 3.8vw;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: transparent;
+        background-image: url('https://www.publicdomainpictures.net/pictures/130000/t2/gray-gradient-background.jpg'); 
+        background-size: 200%; /* Enlarged for smooth animation */
+        background-position: 0 50%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animation2  5s infinite alternate linear;
+    }
+    @keyframes animation2 {
+        0% {
+            background-position: 0 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -355,9 +865,44 @@
   </div>
   
   <div class="container16-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+        animation: jump 2s ease 0s infinite normal forwards;
 
-     </div>
+
+    }
+    @keyframes jump {
+        0%,
+        100% {
+            transform: translateY(0) rotate(0);
+            transform-origin: 50% 50%;
+        }
+    
+        15% {
+            transform: translateY(-30px) rotate(-6deg);
+        }
+    
+        30% {
+            transform: translateY(15px) rotate(6deg);
+        }
+    
+        45% {
+            transform: translateY(-15px) rotate(-3.6deg);
+        }
+    
+        60% {
+            transform: translateY(9px) rotate(2.4deg);
+        }
+    
+        75% {
+            transform: translateY(-6px) rotate(-1.2deg);
+        }
+    }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
      
 
     
@@ -374,9 +919,42 @@
   </div>
   
   <div class="container19-codebox">
-      <pre>@KEYHOTKEYS</pre>
+    <pre id="codeText">
+      @keyframes neonGlow {
+        0% {
+          text-shadow: 0 0 5px #ff00d4, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
+          transform: translateX(-10px) rotate(-5deg);
+        }
+        50% {
+          text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+          transform: translateX(10px) rotate(5deg);
+        }
+        100% {
+          text-shadow: 0 0 5px #ff0088, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
+          transform: translateX(-10px) rotate(-5deg);
+        }
+      }
 
-     </div>
+    span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
+
+        animation: neonGlow 1.5s ease-in-out infinite, bounce 2s ease-in-out infinite;
+
+    }
+    
+
+    @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }</pre>
+  <button onclick="copyCode(this)">Kopiuj</button>
+</div>
     
     
 </section>
@@ -386,6 +964,6 @@
       </main>
 
 
-    
+    <script src="../../js/subpages/text_js/button__copy.js"></script>
 </body>
 </html>

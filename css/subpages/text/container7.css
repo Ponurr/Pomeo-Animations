@@ -41,11 +41,36 @@
   height: 30vw;
   border: 1.1vw solid black;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
 }
-.container7 .container7-codebox pre {
+.container7 pre {
   width: 30vw;
   font-size: 1vw;
   font-family: "ponur";
+}
+.container7 button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #49006E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.container7 button:hover {
+  background-color: #49006E;
+  transform: scale(1.05);
+}
+.container7 #hiddenTextarea {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=container7.css.map */
