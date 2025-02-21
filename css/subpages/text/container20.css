@@ -10,7 +10,7 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .container20 .container20-textbox {
   position: relative;
@@ -27,25 +27,22 @@
   height: 100%;
 }
 .container20 .container20-textbox text {
-  font-size: 3vw;
+  font-size: 4.6vw;
   font-family: "Arial", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   fill: white;
-  stroke-width: 4px;
+  stroke-width: 0.2vw;
 }
 .container20 .container20-textbox .text-copy {
   fill: none;
-  stroke-width: 4px;
+  stroke-width: 0.2vw;
   stroke-linecap: round;
-  stroke-dasharray: 100% 100%;
-  stroke-dashoffset: 100%;
-  opacity: 1;
-  animation: draw-text 3s ease-in-out forwards, pause-text 1.5s ease-in-out 3s forwards, fade-out 1s ease-in-out 4.5s forwards, reset-text 0s linear 7.5s forwards;
-  animation-iteration-count: infinite;
+  stroke-dasharray: 0, 100%;
+  animation: draw-text 3s forwards ease-in-out infinite;
 }
 .container20 .container20-textbox .text-copy:nth-child(1) {
-  stroke: #360745;
+  stroke: #00ff4c;
   animation-delay: 0s;
 }
 .container20 .container20-textbox .text-copy:nth-child(2) {
@@ -61,42 +58,19 @@
   animation-delay: 0.6s;
 }
 .container20 .container20-textbox .text-copy:nth-child(5) {
-  stroke: #1B8798;
+  stroke: #000000;
   animation-delay: 0.8s;
 }
 
 @keyframes draw-text {
-  from {
-    stroke-dashoffset: 100%;
+  0% {
+    stroke-dasharray: 0, 100%;
   }
-  to {
-    stroke-dashoffset: 0;
+  50% {
+    stroke-dasharray: 100%, 0;
   }
-}
-@keyframes pause-text {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes reset-text {
-  from {
-    stroke-dashoffset: 0;
-    opacity: 0;
-  }
-  to {
-    stroke-dashoffset: 100%;
-    opacity: 1;
+  100% {
+    stroke-dasharray: 0, 100%;
   }
 }
 .container20-codebox {
@@ -114,7 +88,7 @@
 
 pre {
   width: 30vw;
-  font-size: 1vw;
+  font-size: 0.25vw;
   font-family: "ponur";
 }
 
