@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="../../css/subpages/text/editor12.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor13.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor14.css">
+
+
+    <link rel="stylesheet" href="../../css/subpages/text/editor17.css">
     <link rel="stylesheet" href="../../css/subpages/text/container.css">
     <link rel="stylesheet" href="../../css/subpages/text/container2.css">
     <link rel="stylesheet" href="../../css/subpages/text/container4.css">
@@ -298,117 +301,39 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-<section class="container17">
-        
-  <div class="container17-textbox">
-    <h1>
-      <em><a>P</a></em>
-      <em class="planet left">O</em>
-      <em>M</em>
-      <em>E</em>
-      <em class="planet right">O</em>
-      
-    </h1>
+<section class="editor17">
+  <div class="editor17__tabs">
+      <button class="editor17__tabs__button editor17__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor17__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor17__tabs__button" data-tab="js">JS</button>
   </div>
-  
-  <div class="container17-codebox">
-    <pre id="codeText">
-     
-h1 {
-  margin: 0;
-  height: 12vmin;
-  width: 22vw;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-h1::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: -26vmin;
-  left: 29vmin;
-  width: 62vmin;
-  height: 62vmin;
-  border-radius: 50%;
-  border: 1.4vmin solid currentColor;
-  box-sizing: border-box;
-}
-
-em {
-  font-family: 'ponur', sans-serif;
-  color: currentColor;
-  font-size: 5vmin;
-  position: relative;
-  font-style: normal;
-  width: 20vmin;
-  text-align: center;
-  color: black;
-}
-a {
-    color: purple !important;
-
-
-
-
-}
-
-em.planet {
-  -webkit-animation: planet-rotate 4s linear infinite;
-  animation: planet-rotate 4s linear infinite;
-  position: relative;
-}
-
-em.planet::before {
-  content: "";
-  position: absolute;
-  top: -.5vmin;
-  left: 4.5vmin;
-  z-index: -1;
-  width: 14vmin;
-  height: 14vmin;
-  border-radius: 50%;
-  background: black;
-  opacity: 0;
-}
-
-em.planet.left {
-  -webkit-transform-origin: 20vw 5vw;
-  transform-origin: 10vw 2vw;
-  color: purple;
-}
-
-em.planet.right {
-  -webkit-transform-origin: 0vw 5vw;
-  transform-origin: -4.8vw 4vw;
-}
-
-@-webkit-keyframes planet-rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-  }
-}
-
-@keyframes planet-rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}</pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
-
-    
+  <div class="editor17__main-content">
+      <div class="editor17__code-menu" id="codeMenu17">
+          <textarea class="editor17__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor17__animation-area">
+          <div class="editor17__animation-area__text">
+            <h1>
+            <em><a>P</a></em>
+            <em class="planet left">O</em>
+            <em>M</em>
+            <em>E</em>
+            <em class="planet right">O</em>
+            
+          </h1>
+        </div>
+      </div>
+  </div>
 </section>
+
+
+
+
+
+
+
+
+
 
 <section class="container15">
         
@@ -1041,5 +966,7 @@ em.planet.right {
     <script src="../../js/subpages/text/editor11.js"></script>
     <script src="../../js/subpages/text/editor12.js"></script>
     <script src="../../js/subpages/text/editor13.js"></script>
+    <script src="../../js/subpages/text/editor14.js"></script>
+    <script src="../../js/subpages/text/editor17.js"></script>
 </body>
 </html>

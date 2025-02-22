@@ -6,28 +6,78 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor14__animation-area__text">Przykładowa Animacja</div>
+<div class="editor14__animation-area__text">
+            <span> Ponur to giga szef</span>
+            <span> Ponur to giga szef</span>
+          </div>
         `,
         scss: `
 .editor14__animation-area__text {
     font-size: 2rem;
     color: #fff;
     text-align: center;
-    animation: blurEffect 2s infinite ease-in-out;
+    justify-content: center;
+    display: flex;
 
 
-}
-@keyframes blurEffect {
-    0% {
-        filter: blur(0px);
-    }
-    50% {
-        filter: blur(5px);
-    }
-    100% {
-        filter: blur(0px);
-    }
-}   
+    span{
+        position: absolute;
+        transform: translate(-50%, -50%);
+          width: 35vw;
+          font-size: 2.8vw;
+          font-family: "ponur";
+          font-weight: 300;
+          letter-spacing: 0.12vw;
+          text-transform: uppercase;
+         
+          left: 24.5vw;
+          
+          animation: effect 15s linear infinite;
+          &:nth-child(1){
+            color: transparent;
+            -webkit-text-stroke: 0.18vw #ffffff;
+
+          }
+          &:nth-child(2){
+
+            color: #ffffff;
+            animation: animate 4s ease-in-out infinite;
+          }
+      }
+     
+
+      @keyframes animate {
+        0%,
+        100% {
+          clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      
+        50% {
+          clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      }
+    }    
+ 
         `,
         js: `
 
