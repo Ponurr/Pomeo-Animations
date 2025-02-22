@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="editor15__animation-area__text">
             <span style="--i:1"> P</span>
             <span style="--i:2"> O</span>
-            <span style="--i:4"> N</span>
-            <span style="--i:4"> U</span>
-            <span style="--i:5"> R</span>
+            <span style="--i:4"> M</span>
+            <span style="--i:4"> E</span>
+            <span style="--i:5"> O</span>
           </div>
         `,
         scss: `
