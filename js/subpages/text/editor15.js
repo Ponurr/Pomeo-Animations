@@ -6,28 +6,62 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor15__animation-area__text">Przykładowa Animacja</div>
+<div class="editor15__animation-area">
+          <div class="editor15__animation-area__text">
+            <span style="--i:1"> P</span>
+            <span style="--i:2"> O</span>
+            <span style="--i:4"> N</span>
+            <span style="--i:4"> U</span>
+            <span style="--i:5"> R</span>
+          </div>
         `,
         scss: `
 .editor15__animation-area__text {
-    font-size: 2rem;
+    overflow: hidden;
+    width: 15vw;
+    height: 30vw;
+    align-items: center;
+    display: flex;
+    margin-left: -14vw;
+    justify-content: center;
+    position: relative;
     color: #fff;
-    text-align: center;
-    animation: blurEffect 2s infinite ease-in-out;
 
+    span{
+      display: inline-block;
+      width: 35vw;
+      font-size: 2vw;
+      font-family: "ponur";
+      font-weight: 300;
+      position: relative;
+      text-transform: uppercase;
+      animation: animate1 2s infinite;
+      animation-delay: calc(.2s * var(--i));
+    }
 
-}
-@keyframes blurEffect {
-    0% {
-        filter: blur(0px);
+      &:nth-child(1) {
+        left: 8vw;
+      }
+      &:nth-child(2) {
+        left: 5.2vw;
+      }
+      &:nth-child(3) {
+        left: 3vw;
+      }
+      &:nth-child(4) {
+        left: 0.7vw;
+      }
+      &:nth-child(5){
+        left: -1.65vw;
+      }
     }
-    50% {
-        filter: blur(5px);
+
+    @keyframes animate1 {
+      0%,
+      80% {
+        transform: rotateY(360deg);
+      }
     }
-    100% {
-        filter: blur(0px);
-    }
-}   
         `,
         js: `
 

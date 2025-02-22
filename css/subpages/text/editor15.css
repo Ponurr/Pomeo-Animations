@@ -75,21 +75,46 @@
 }
 
 .editor15__animation-area__text {
-  font-size: 2rem;
+  overflow: hidden;
+  width: 15vw;
+  height: 30vw;
+  align-items: center;
+  display: flex;
+  margin-left: -14vw;
+  justify-content: center;
+  position: relative;
   color: #fff;
-  text-align: center;
-  animation: blurEffect 2s infinite ease-in-out;
+}
+.editor15__animation-area__text span {
+  display: inline-block;
+  width: 35vw;
+  font-size: 2vw;
+  font-family: "ponur";
+  font-weight: 300;
+  position: relative;
+  text-transform: uppercase;
+  animation: animate1 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+.editor15__animation-area__text:nth-child(1) {
+  left: 8vw;
+}
+.editor15__animation-area__text:nth-child(2) {
+  left: 5.2vw;
+}
+.editor15__animation-area__text:nth-child(3) {
+  left: 3vw;
+}
+.editor15__animation-area__text:nth-child(4) {
+  left: 0.7vw;
+}
+.editor15__animation-area__text:nth-child(5) {
+  left: -1.65vw;
 }
 
-@keyframes blurEffect {
-  0% {
-    filter: blur(0px);
-  }
-  50% {
-    filter: blur(5px);
-  }
-  100% {
-    filter: blur(0px);
+@keyframes animate1 {
+  0%, 80% {
+    transform: rotateY(360deg);
   }
 }
 
