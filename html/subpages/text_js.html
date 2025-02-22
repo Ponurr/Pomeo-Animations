@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>text_js</title>
+    <title>Edytor z Animacją</title>
+    <link rel="stylesheet" href="../../css/subpages/text_js/editor-container.css">
+    <link rel="stylesheet" href="../../css/subpages/text_js/navigation.css">
+    <link rel="stylesheet" href="../../css/subpages/text_js/index.css">
 </head>
 <body>
-    
+
+    <section class="navigation">
+        <div class="navigation-container">
+          <div class="navigation__container-content">
+           <a href="../../html/subpages/text.html"> <span>TEXT</span></a>
+           <a href="../../html/subpages/text_js.html"> <span>TEXT + JS</span></a>
+           <a href="../../html/subpages/shape.html"> <span>KSZTALT</span></a>
+           <a href="../../html/subpages/shape_js.html"><span>KSZTALT + JS</span></a>
+          </div>
+        </div>
+      </section>
+
+    <div class="editor">
+        <div class="editor__tabs">
+            <button class="editor__tabs__button editor__tabs__button--active" data-tab="html">HTML</button>
+            <button class="editor__tabs__button" data-tab="scss">SCSS</button>
+            <button class="editor__tabs__button" data-tab="js">JS</button>
+        </div>
+        <div class="editor__main-content">
+            <div class="editor__code-menu" id="codeMenu">
+                <textarea class="editor__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+            </div>
+            <div class="editor__animation-area">
+                <div class="editor__animation-area__text">Przykładowa Animacja</div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/subpages/text_js/editor.js"></script>
 </body>
 </html>
