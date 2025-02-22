@@ -6,6 +6,9 @@
     <title>text</title>
     <link rel="stylesheet" href="../../css/subpages/text/navigation.css">
     <link rel="stylesheet" href="../../css/subpages/text/index.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor1.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor2.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor3.css">
     <link rel="stylesheet" href="../../css/subpages/text/container.css">
     <link rel="stylesheet" href="../../css/subpages/text/container2.css">
     <link rel="stylesheet" href="../../css/subpages/text/container3.css">
@@ -49,109 +52,61 @@
 
 
       <main>    
-        <section class="container">
-            <div class="container-title1">
-            <span>TEKST</span>
-            </div>
-            <div class="container-textbox">
-            
-             <span> amet consectetur adipisicing elit. Ducimus explicabo quia a maiores, quos molestias dicta nihil. Hic optio ipsam nobis, sed enim numquam, cupiditate est voluptates velit sapiente voluptatibus!</span>
-            
-            </div>
-            <div class="container-title2">
-                <span>KOD ŹRÓDŁOWY</span>
-            </div>
-            <div class="container-codebox">
-              <pre id="codeText">
-                span{
-                width: 30vw;
-                font-size: 1.8vw;
-                font-family: "ponur";
-                animation: slideLeftRight 3s infinite linear;
-            }
-            @keyframes slideLeftRight {
-                0%, 100% {
-                    transform: translateX(0);
-                }
-                50% {
-                    transform: translateX(20px);
-                }
-            }</pre>
-            <button onclick="copyCode(this)">Kopiuj</button>
+
+        <section class="editor">
+          <div class="editor__tabs">
+              <button class="editor__tabs__button editor__tabs__button--active" data-tab="html">HTML</button>
+              <button class="editor__tabs__button" data-tab="scss">SCSS</button>
+              <button class="editor__tabs__button" data-tab="js">JS</button>
           </div>
-      
-          <textarea id="hiddenTextarea"></textarea>
-               
-
-               
-
-
-        </section>
-
-
-
-        <section class="container2">
-        
-          <div class="container2-textbox">
-          
-           <span> amet consectetur adipisicing elit. Ducimus explicabo quia a maiores, quos molestias dicta nihil. Hic optio ipsam nobis, sed enim numquam, cupiditate est voluptates velit sapiente voluptatibus!</span>
-          
+          <div class="editor__main-content">
+              <div class="editor__code-menu" id="codeMenu">
+                  <textarea class="editor__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+              </div>
+              <div class="editor__animation-area">
+                  <div class="editor__animation-area__text"><span>Przykładowa Animacja</span></div>
+              </div>
           </div>
-          
-          <div class="container2-codebox">
-            <pre id="codeText">
-              span{
-                width: 30vw;
-                font-size: 1.8vw;
-                font-family: "ponur";
-                animation: pulse 2s infinite ease-in-out;
-            }
-            @keyframes pulse {
-                0%, 100% {
-                    transform: scale(1);
-                }
-                50% {
-                    transform: scale(1.1);
-                }
-            }</pre>
-          <button onclick="copyCode(this)">Kopiuj</button>
-        </div>
-    
-        
-             
-
-            
       </section>
-      <section class="container3">
-        
-        <div class="container3-textbox">
-        
-         <span> amet consectetur adipisicing elit. Ducimus explicabo quia a maiores, quos molestias dicta nihil. Hic optio ipsam nobis, sed enim numquam, cupiditate est voluptates velit sapiente voluptatibus!</span>
-        
-        </div>
-        
-        <div class="container3-codebox">
-          <pre id="codeText">
-            span{
-              width: 30vw;
-              font-size: 1.8vw;
-              font-family: "ponur";
-              animation: rotateBox 2s infinite ease-in-out;
-          }
-          @keyframes rotateBox {
-              0%, 100% {
-                  transform: rotate(0deg);
-              }
-              50% {
-                  transform: rotate(10deg);
-              }
-          }</pre>
-        <button onclick="copyCode(this)">Kopiuj</button>
-      </div>
-           
 
-          
+      <section class="editor2">
+        <div class="editor2__tabs">
+            <button class="editor2__tabs__button editor2__tabs__button--active" data-tab="html">HTML</button>
+            <button class="editor2__tabs__button" data-tab="scss">SCSS</button>
+            <button class="editor2__tabs__button" data-tab="js">JS</button>
+        </div>
+        <div class="editor2__main-content">
+            <div class="editor2__code-menu" id="codeMenu2">
+                <textarea class="editor2__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+            </div>
+            <div class="editor2__animation-area">
+                <div class="editor2__animation-area__text"><span>Przykładowa Animacja</span></div>
+            </div>
+        </div>
     </section>
+
+    <section class="editor3">
+      <div class="editor3__tabs">
+          <button class="editor3__tabs__button editor3__tabs__button--active" data-tab="html">HTML</button>
+          <button class="editor3__tabs__button" data-tab="scss">SCSS</button>
+          <button class="editor3__tabs__button" data-tab="js">JS</button>
+      </div>
+      <div class="editor3__main-content">
+          <div class="editor3__code-menu" id="codeMenu3">
+              <textarea class="editor3__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+          </div>
+          <div class="editor3__animation-area">
+              <div class="editor3__animation-area__text"><span>Przykładowa Animacja</span></div>
+          </div>
+      </div>
+  </section>
+
+
+        
+
+
+
+       
     <section class="container4">
         
       <div class="container4-textbox">
@@ -1371,5 +1326,8 @@ em.planet.right {
 
 
     <script src="../../js/subpages/text_js/button__copy.js"></script>
+    <script src="../../js/subpages/text/editor1.js"></script>
+    <script src="../../js/subpages/text/editor2.js"></script>
+    <script src="../../js/subpages/text/editor3.js"></script>
 </body>
 </html>
