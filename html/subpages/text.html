@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/subpages/text/editor21.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor22.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor23.css">
-
+    <link rel="stylesheet" href="../../css/subpages/text/editor18.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor4.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor5.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor6.css">
@@ -359,98 +359,28 @@
 
 
 
-<section class="container18">
-        
-  <div class="container18-textbox">
-  
-   <span> Ponurek to szef</span>
-  
-  </div>
-  
-  <div class="container18-codebox">
-    <pre id="codeText">
-      span{
-        font-size: 4.8vw;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: transparent;
-        background-image: url('https://www.publicdomainpictures.net/pictures/140000/t2/gray-gradient-background.jpg'); 
-        background-size: 200%; /* Enlarged for smooth animation */
-        background-position: 0 50%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: animation2  5s infinite alternate linear;
-    }
-    @keyframes animation2 {
-        0% {
-            background-position: 0 50%;
-        }
-        100% {
-            background-position: 100% 50%;
-        }
-    }</pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
 
-    
+<section class="editor18">
+  <div class="editor18__tabs">
+      <button class="editor18__tabs__button editor18__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor18__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor18__tabs__button" data-tab="js">JS</button>
+  </div>
+  <div class="editor18__main-content">
+      <div class="editor18__code-menu" id="codeMenu18">
+          <textarea class="editor18__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor18__animation-area">
+          <div class="editor18__animation-area__text">
+            <span> Ponurek to szef</span>
+        </div>
+      </div>
+  </div>
 </section>
+
 
 
  
-
-<section class="container16">
-        
-  <div class="container16-textbox">
-  
-   <span> MATI PAPI BIGGEST PLAYE</span>
-  
-  </div>
-  
-  <div class="container16-codebox">
-    <pre id="codeText">
-      span{
-        width: 40vw;
-        font-size: 1.8vw;
-        font-family: "ponur";
-        animation: jump 2s ease 0s infinite normal forwards;
-
-
-    }
-    @keyframes jump {
-        0%,
-        100% {
-            transform: translateY(0) rotate(0);
-            transform-origin: 50% 50%;
-        }
-    
-        15% {
-            transform: translateY(-40px) rotate(-6deg);
-        }
-    
-        40% {
-            transform: translateY(15px) rotate(6deg);
-        }
-    
-        45% {
-            transform: translateY(-15px) rotate(-4.6deg);
-        }
-    
-        60% {
-            transform: translateY(9px) rotate(2.4deg);
-        }
-    
-        75% {
-            transform: translateY(-6px) rotate(-1.2deg);
-        }
-    }</pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
-
-    
-</section>
 
 
 
@@ -626,5 +556,6 @@
     <script src="../../js/subpages/text/editor14.js"></script>
     <script src="../../js/subpages/text/editor15.js"></script>
     <script src="../../js/subpages/text/editor17.js"></script>
+    <script src="../../js/subpages/text/editor18.js"></script>
 </body>
 </html>
