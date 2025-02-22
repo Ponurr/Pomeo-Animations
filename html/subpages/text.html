@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="../../css/subpages/text/editor1.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor2.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor3.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor16.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor19.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor20.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor21.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor22.css">
+    <link rel="stylesheet" href="../../css/subpages/text/editor23.css">
+
     <link rel="stylesheet" href="../../css/subpages/text/editor4.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor5.css">
     <link rel="stylesheet" href="../../css/subpages/text/editor6.css">
@@ -47,6 +54,7 @@
     <link rel="stylesheet" href="../../css/subpages/text/container19.css">        
     <link rel="stylesheet" href="../../css/subpages/text/container20.css">   
     <link rel="stylesheet" href="../../css/subpages/text/container22.css">       
+    <link rel="stylesheet" href="../../css/subpages/text/container22.css">    
     <link rel="stylesheet" href="../../css/subpages/text/container24.css">    
 
 
@@ -470,7 +478,7 @@
         
   <div class="container16-textbox">
   
-   <span> MATI PAPI BIGGEST PLAYER</span>
+   <span> MATI PAPI BIGGEST PLAYE</span>
   
   </div>
   
@@ -520,59 +528,56 @@
 
 
 
-<section class="container19">
-        
-  <div class="container19-textbox">
-  
-   <span> MATI PAPI BIGGEST PLAYER</span>
-  
+<section class="editor16">
+  <div class="editor16__tabs">
+      <button class="editor16__tabs__button editor16__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor16__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor16__tabs__button" data-tab="js">JS</button>
   </div>
-  
-  <div class="container19-codebox">
-    <pre id="codeText">
-      @keyframes neonGlow {
-        0% {
-          text-shadow: 0 0 5px #ff00d4, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
-          transform: translateX(-10px) rotate(-5deg);
-        }
-        50% {
-          text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
-          transform: translateX(10px) rotate(5deg);
-        }
-        100% {
-          text-shadow: 0 0 5px #ff0088, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
-          transform: translateX(-10px) rotate(-5deg);
-        }
-      }
-
-    span{
-        width: 40vw;
-        font-size: 1.8vw;
-        font-family: "ponur";
-
-        animation: neonGlow 1.5s ease-in-out infinite, bounce 2s ease-in-out infinite;
-
-    }
-    
-
-    @keyframes bounce {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }</pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-    
-    
+  <div class="editor16__main-content">
+      <div class="editor16__code-menu" id="codeMenu16">
+          <textarea class="editor16__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor16__animation-area">
+          <div class="editor16__animation-area__text"> <div class="main">
+           
+            <span> MATI PAPI BIGGEST PLAYER</span>
+           
+  </div>
 </section>
 
-<section class="container21">
-        
-  <div class="container21-textbox">
-  
+<section class="editor19">
+  <div class="editor19__tabs">
+      <button class="editor19__tabs__button editor19__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor19__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor19__tabs__button" data-tab="js">JS</button>
+  </div>
+  <div class="editor19__main-content">
+      <div class="editor19__code-menu" id="codeMenu19">
+          <textarea class="editor19__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor19__animation-area">
+          <div class="editor19__animation-area__text"> <div class="main">
+           
+            <span> MATI PAPI BIGGEST PLAYER</span>
+           
+  </div>
+</section>
+
+
+<section class="editor21">
+  <div class="editor21__tabs">
+      <button class="editor21__tabs__button editor21__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor21__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor21__tabs__button" data-tab="js">JS</button>
+  </div>
+  <div class="editor21__main-content">
+      <div class="editor21__code-menu" id="codeMenu21">
+          <textarea class="editor21__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor21__animation-area">
+          <div class="editor21__animation-area__text"> <div class="main">
+           
     <div class="keyboard">
       <span class="key">M</span>
       <span class="key">A</span>
@@ -583,391 +588,89 @@
       <span class="key">P</span>
       <span class="key">I</span>
     </div>
-  
+           
   </div>
-  
-  <div class="container21-codebox">
-    <pre id="codeText"> 
-      span {
-        font-size: 6vw;
-        display: inline-block;
-        letter-spacing: -1vw;
-        transition: transform 0.2s;
-      }
-
-      @keyframes pressDown1 {
-      40%,
-      40%,
-      100% {
-        transform: translateY(0);
-      }
-      45% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown2 {
-      70%,
-      80%,
-      100% {
-        transform: translateY(0);
-      }
-      75% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown4 {
-      40%,
-      40%,
-      100% {
-        transform: translateY(0);
-      }
-      45% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown4 {
-      40%,
-      50%,
-      100% {
-        transform: translateY(0);
-      }
-      45% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown5 {
-      20%,
-      40%,
-      100% {
-        transform: translateY(0);
-      }
-      25% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown6 {
-      60%,
-      70%,
-      100% {
-        transform: translateY(0);
-      }
-      65% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown7 {
-      10%,
-      20%,
-      100% {
-        transform: translateY(0);
-      }
-      15% {
-        transform: translateY(10px);
-      }
-    }
-    
-    @keyframes pressDown8 {
-      45%,
-      45%,
-      100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(10px);
-      }
-    }
-    
-    
-    
-    .key:nth-child(1) {
-      animation: pressDown1 2s infinite;
-    }
-    
-    .key:nth-child(2) {
-      animation: pressDown2 4s infinite;
-    }
-    
-    .key:nth-child(4) {
-      animation: pressDown4 4s infinite;
-    }
-    
-    .key:nth-child(4) {
-      animation: pressDown4 2.5s infinite;
-    }
-    
-    .key:nth-child(5) {
-      animation: pressDown5 2.5s infinite;
-    }
-    
-    .key:nth-child(6) {
-      animation: pressDown6 4.5s infinite;
-    }
-    
-    .key:nth-child(7) {
-      animation: pressDown7 2.2s infinite;
-    }
-    
-    .key:nth-child(8) {
-      animation: pressDown8 4.2s infinite;
-    }
-      </pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
-
-    
 </section>
 
-
-<section class="container20">
-  <div class="container20-textbox">
-      <svg viewBox="0 0 800 400">
-          <symbol id="s-text">
-              <text text-anchor="middle" x="50%" y="40%" class="text--line">
-                  pomeo
-              </text>
-              <text text-anchor="middle" x="50%" y="75%" class="text--line2">
-                  Space
-              </text>
-          </symbol>
-
-          <g class="g-ants">
-              <use xlink:href="#s-text" class="text-copy"></use>
-              <use xlink:href="#s-text" class="text-copy"></use>
-              <use xlink:href="#s-text" class="text-copy"></use>
-              <use xlink:href="#s-text" class="text-copy"></use>
-              <use xlink:href="#s-text" class="text-copy"></use>
-          </g>
-      </svg>
+<section class="editor20">
+  <div class="editor20__tabs">
+      <button class="editor20__tabs__button editor20__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor20__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor20__tabs__button" data-tab="js">JS</button>
   </div>
-  <div class="container20-codebox">
-    <pre id="codeText">
-      $colors: #00ff4c, #D61C59, #E7D84B, #ff7ee4, #000000;
-      $stroke-width: 0.2vw; // Grubość konturu tekstu
-      $animation-duration: 4s; 
-      
-      .container20 {
-          width: 96vw;
-          height: 40vw;
-          background-color: rgb(255, 255, 255);
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-      
-          .container20-textbox {
-              position: relative;
-              overflow: hidden;
-              width: 40vw;
-              height: 40vw;
-              border: 1.1vw solid black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-      
-              svg {
-                  width: 100%;
-                  height: 100%;
-              }
-      
-              text {
-                  font-size: 4.6vw;
-                  font-family: "Arial", sans-serif;
-                  font-weight: bold;
-                  text-transform: uppercase;
-                  fill: white; // Wypełnienie tekstu
-                  stroke-width: $stroke-width;
-              }
-      
-              .text-copy {
-                  fill: none;
-                  stroke-width: $stroke-width;
-                  stroke-linecap: round;
-                  stroke-dasharray: 0, 100%; // Początkowo ukryty tekst
-                  animation: draw-text $animation-duration forwards ease-in-out infinite;
-      
-                  @for $i from 1 through length($colors) {
-                      &:nth-child(#{$i}) {
-                          stroke: nth($colors, $i);
-                          animation-delay: ($i - 1) * 0.2s;
-                      }
-                  }
-              }
-          }
-      }
-      
-      @keyframes draw-text {
-          0% {
-              stroke-dasharray: 0, 100%;
-          }
-          50% {
-              stroke-dasharray: 100%, 0;
-          }
-          100% {
-              stroke-dasharray: 0, 100%;
-          }
-      }
-      
-          </pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
+  <div class="editor20__main-content">
+      <div class="editor20__code-menu" id="codeMenu20">
+          <textarea class="editor20__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor20__animation-area">
+        <div class="editor20__animation-area__text"> <div class="main">
+          <svg viewBox="0 0 800 300">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="40%" class="text--line">
+                    pomeo
+                </text>
+                <text text-anchor="middle" x="50%" y="75%" class="text--line2">
+                    Space
+                </text>
+            </symbol>
+  
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+         
 </div>
-    
-    
 </section>
 
 
 
-<section class="container22">
-        
-  <div class="container22-textbox">
-    <span>
-      <span>P</span><span>o</span><span>n</span><span>u</span><span>r</span><span>e</span><span>k</span><span> </span><span>t</span><span>o</span><span> </span><span>s</span><span>z</span><span>e</span><span>f</span>
-    </span>
+<section class="editor22">
+  <div class="editor22__tabs">
+      <button class="editor22__tabs__button editor22__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor22__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor22__tabs__button" data-tab="js">JS</button>
   </div>
-  
-  <div class="container22-codebox">
-    <pre id="codeText">
-      .container22-textbox {
-        overflow: hidden;
-        width: 40vw;
-        height: 40vw;
-        border: 1.1vw solid black;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        perspective: 1000px; 
-      
-        span {
-          width: 40vw;
-          font-size: 1.8vw;
-          font-family: "ponur";
-          color: #000;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          display: inline-flex;
-          position: relative;
-      
-          
-          span {
-            display: inline-block;
-            animation: explodeAndReform 2.5s ease-in-out infinite;
-            transform-style: preserve-4d; 
-            position: relative;
-          }
-      
-          
-          $text: "Ponurek to szef";
-          @for $i from 1 through str-length($text) {
-            span:nth-child(#{$i}) {
-              animation-delay: ($i * 0.15s); 
-            }
-          }
-        }
-      
-       
-        @keyframes explodeAndReform {
-          0% {
-            transform: translateZ(0) rotateX(0deg) rotateY(0deg) scale(1);
-            opacity: 1;
-          }
-          20% {
-            transform: translateZ(50px) rotateX(90deg) rotateY(45deg) scale(1.4); 
-            opacity: 0.7;
-          }
-          40% {
-            transform: translateZ(-40px) translateX(20px) rotateX(-180deg) rotateY(90deg) scale(0.8); 
-            opacity: 0.5;
-          }
-          60% {
-            transform: translateZ(20px) translateY(-15px) rotateX(460deg) rotateY(-45deg) scale(1.1); 
-            opacity: 0.8;
-          }
-          80% {
-            transform: translateZ(-10px) rotateX(-90deg) rotateY(180deg) scale(0.9); 
-            opacity: 0.9;
-          }
-          100% {
-            transform: translateZ(0) rotateX(0deg) rotateY(0deg) scale(1); 
-            opacity: 1;
-          }
-        }
-      }
-    
-    
-   </pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
-
-    
+  <div class="editor22__main-content">
+      <div class="editor22__code-menu" id="codeMenu22">
+          <textarea class="editor22__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor22__animation-area">
+          <div class="editor22__animation-area__text"> <div class="main">
+            <span>
+              <span>P</span><span>o</span><span>n</span><span>u</span><span>r</span><span>e</span><span>k</span><span> </span><span>t</span><span>o</span><span> </span><span>s</span><span>z</span><span>e</span><span>f</span>
+            </span>
+            </div>
+  </div>
 </section>
 
 
 
-<section class="container24">
-        
-  <div class="container24-textbox">
-  
-    <div class="main">
-      <span>P</span>
-      <span class="letter"></span>
-      <span>M</span>
-      <span>E</span>
-      <span>O</span>
-    </div>
-  
+
+<section class="editor23">
+  <div class="editor23__tabs">
+      <button class="editor23__tabs__button editor23__tabs__button--active" data-tab="html">HTML</button>
+      <button class="editor23__tabs__button" data-tab="scss">SCSS</button>
+      <button class="editor23__tabs__button" data-tab="js">JS</button>
   </div>
-  
-  <div class="container24-codebox">
-    <pre id="codeText"> 
-      span{
-        margin: 0 15px;
-        line-height: .7;
-        text-shadow: 0 0 2px rgba(0, 0, 0, .45);
-        animation: span 4s ease-in infinite alternate;
-    }
-    .main{
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-      
-          
-        @media(max-width: 600px){ transform: scale(.65); }
-    }
-    .letter{
-        display: inline-flex;
-        height: 1.5vw;
-        width: 0.27vw;
-        border: 0.245vw solid black;
-        border-radius: 1.4vw;
-        box-shadow:
-            0 0 0.1vw rgba(0, 0, 0, .75),
-            inset 0 0 0.1vw rgba(0, 0, 0, .45);
-    
-        animation: letter 4s ease-in-out infinite alternate;
-    }
-    @keyframes span {
-        0%,40%{ margin: 0 15px; }
-        70%,100%{ margin: 0 5px; }
-    }
-    @keyframes letter {
-        0%,40%{ width: 27px; }
-        70%,100%{ width: 20vw; }
-    }
-      </pre>
-  <button onclick="copyCode(this)">Kopiuj</button>
-</div>
-     
-
-    
+  <div class="editor23__main-content">
+      <div class="editor23__code-menu" id="codeMenu23">
+          <textarea class="editor23__code-menu__input" placeholder="Wklej tutaj kod..." readonly></textarea>
+      </div>
+      <div class="editor23__animation-area">
+          <div class="editor23__animation-area__text"> <div class="main">
+            <span>P</span>
+            <span class="letter"></span>
+            <span>M</span>
+            <span>E</span>
+            <span>O</span>
+          </div></div>
+      </div>
+  </div>
 </section>
-
-
 
 
 
@@ -978,6 +681,13 @@
     <script src="../../js/subpages/text/editor1.js"></script>
     <script src="../../js/subpages/text/editor2.js"></script>
     <script src="../../js/subpages/text/editor3.js"></script>
+    <script src="../../js/subpages/text/editor16.js"></script>
+    <script src="../../js/subpages/text/editor19.js"></script>
+    <script src="../../js/subpages/text/editor20.js"></script>
+    <script src="../../js/subpages/text/editor21.js"></script>
+    <script src="../../js/subpages/text/editor22.js"></script>
+    <script src="../../js/subpages/text/editor23.js"></script>
+
     <script src="../../js/subpages/text/editor4.js"></script>
     <script src="../../js/subpages/text/editor5.js"></script>
     <script src="../../js/subpages/text/editor6.js"></script>
