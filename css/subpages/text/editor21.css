@@ -86,10 +86,11 @@
   font-size: 2vw;
 }
 .editor21__animation-area__text span {
-  font-size: 6vw;
+  font-size: 4.5vw;
   display: inline-block;
   letter-spacing: -1vw;
   transition: transform 0.2s;
+  color: #fff;
 }
 @keyframes pressDown1 {
   30%, 40%, 100% {
@@ -131,30 +132,6 @@
     transform: translateY(10px);
   }
 }
-@keyframes pressDown6 {
-  60%, 70%, 100% {
-    transform: translateY(0);
-  }
-  65% {
-    transform: translateY(10px);
-  }
-}
-@keyframes pressDown7 {
-  10%, 20%, 100% {
-    transform: translateY(0);
-  }
-  15% {
-    transform: translateY(10px);
-  }
-}
-@keyframes pressDown8 {
-  35%, 45%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(10px);
-  }
-}
 .editor21__animation-area__text .key:nth-child(1) {
   animation: pressDown1 2s infinite;
 }
@@ -169,15 +146,6 @@
 }
 .editor21__animation-area__text .key:nth-child(5) {
   animation: pressDown5 2.5s infinite;
-}
-.editor21__animation-area__text .key:nth-child(6) {
-  animation: pressDown6 3.5s infinite;
-}
-.editor21__animation-area__text .key:nth-child(7) {
-  animation: pressDown7 2.2s infinite;
-}
-.editor21__animation-area__text .key:nth-child(8) {
-  animation: pressDown8 3.2s infinite;
 }
 
 /*# sourceMappingURL=editor21.css.map */

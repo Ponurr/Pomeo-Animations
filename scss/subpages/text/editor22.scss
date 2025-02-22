@@ -91,7 +91,7 @@
         width: 30vw;
         font-size: 1.8vw;
         font-family: "ponur";
-        color: #000;
+        color: #ffffff;
         text-transform: uppercase;
         letter-spacing: 2px;
         display: inline-flex;
@@ -100,7 +100,7 @@
         
         span {
           display: inline-block;
-          animation: explodeAndReform 2.5s ease-in-out infinite;
+          animation: explodeAndReform 7s ease-in-out infinite;
           transform-style: preserve-3d; 
           position: relative;
         }

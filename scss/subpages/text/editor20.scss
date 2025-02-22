@@ -107,7 +107,7 @@ $animation-duration: 3s;
         font-family: "Arial", sans-serif;
         font-weight: bold;
         text-transform: uppercase;
-        fill: rgb(255, 255, 255); // Wypełnienie tekstu
+        fill: rgb(255, 255, 255); 
         stroke-width: $stroke-width;
     }
 
@@ -115,7 +115,7 @@ $animation-duration: 3s;
         fill: none;
         stroke-width: $stroke-width;
         stroke-linecap: round;
-        stroke-dasharray: 0, 100%; // Początkowo ukryty tekst
+        stroke-dasharray: 0, 100%; 
         animation: draw-text $animation-duration forwards ease-in-out infinite;
 
         @for $i from 1 through length($colors) {

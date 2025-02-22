@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 2vw;
-    
+  
     svg {
         width: 100%;
         height: 100%;
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         font-family: "Arial", sans-serif;
         font-weight: bold;
         text-transform: uppercase;
-        color: #000000;
+        fill: rgb(255, 255, 255); 
         stroke-width: $stroke-width;
     }
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fill: none;
         stroke-width: $stroke-width;
         stroke-linecap: round;
-        stroke-dasharray: 0, 100%; // Początkowo ukryty tekst
+        stroke-dasharray: 0, 100%; 
         animation: draw-text $animation-duration forwards ease-in-out infinite;
 
         @for $i from 1 through length($colors) {
@@ -64,10 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    }
-  
+}
 
-
+@keyframes draw-text {
+0% {
+    stroke-dasharray: 0, 100%;
+}
+50% {
+    stroke-dasharray: 100%, 0;
+}
+100% {
+    stroke-dasharray: 0, 100%;
+}
+}
         `,
         js: `
 

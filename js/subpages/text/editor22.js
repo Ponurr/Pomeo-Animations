@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
         html: `
  <div class="editor22__animation-area__text"> <div class="main">
             <span>
-              <span>P</span><span>o</span><span>n</span><span>u</span><span>r</span><span>e</span><span>k</span><span> </span><span>t</span><span>o</span><span> </span><span>s</span><span>z</span><span>e</span><span>f</span>
+              <span>P</span><span>o</span><span>m</span><span>e</span><span>o</span>
             </span>
             </div>
         `,
         scss: `
 .editor22__animation-area__text {
    
-
+    
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 2vw;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         width: 30vw;
         font-size: 1.8vw;
         font-family: "ponur";
-        color: #000;
+        color: #ffffff;
         text-transform: uppercase;
         letter-spacing: 2px;
         display: inline-flex;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         span {
           display: inline-block;
-          animation: explodeAndReform 2.5s ease-in-out infinite;
+          animation: explodeAndReform 7s ease-in-out infinite;
           transform-style: preserve-3d; 
           position: relative;
         }
@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
-
-
         `,
         js: `
 
