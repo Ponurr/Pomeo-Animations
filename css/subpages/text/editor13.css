@@ -93,82 +93,52 @@
 
 @keyframes effect {
   0% {
-    content: "Ponur";
+    content: "PO";
   }
-  4% {
-    content: "to";
-  }
-  8% {
-    content: "giga";
+  6% {
+    content: "MEO";
   }
   12% {
-    content: "szef ";
+    content: "SPACE";
   }
-  16% {
-    content: "";
-  }
-  20% {
-    content: "Po";
+  18% {
+    content: "POMEOSPACE ";
   }
   24% {
-    content: "Ponu";
+    content: "";
   }
-  28% {
-    content: "Ponur ";
-  }
-  32% {
-    content: "Ponu ";
+  30% {
+    content: "PO";
   }
   36% {
-    content: "Ponur  ";
+    content: "POM";
   }
-  40% {
-    content: "Ponur t  ";
+  42% {
+    content: "POMEO ";
   }
-  44% {
-    content: "Ponur to ";
-  }
-  48% {
-    content: "Ponur to s";
-  }
-  52% {
-    content: "Ponur to sze";
+  50% {
+    content: "POME ";
   }
   56% {
-    content: "Ponur to sz";
+    content: "POMEO  ";
   }
-  60% {
-    content: "Ponur to sze";
+  63% {
+    content: "POMEOS  ";
   }
-  64% {
-    content: "Ponur to szef";
-  }
-  68% {
-    content: "Ponur to szef i ";
-  }
-  72% {
-    content: "Ponur to szef i gi";
-  }
-  76% {
-    content: "Ponur to szef i g";
+  71% {
+    content: "POMEOSPA ";
   }
   80% {
-    content: "Ponur to szef i giga";
-  }
-  84% {
-    content: "Ponur to szef i giga k";
+    content: "POMEOSP";
   }
   88% {
-    content: "Ponur to szef i giga ko";
+    content: "POMEOSPAC";
   }
-  92% {
-    content: "Ponur to szef i giga koc";
-  }
-  96% {
-    content: "Ponur to szef i giga kocu";
+  94% {
+    content: "POMEOSPA";
   }
   100% {
-    content: "Ponur to szef i giga kocur";
+    content: "POMEOSPACE";
   }
 }
 

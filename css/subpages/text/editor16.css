@@ -79,6 +79,7 @@
   font-size: 2vw;
   font-family: "ponur";
   animation: jump 2s ease 0s infinite normal forwards;
+  color: #fff;
 }
 .editor16__animation-area__text span {
   display: inline-block;

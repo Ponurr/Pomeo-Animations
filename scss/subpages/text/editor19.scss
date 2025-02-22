@@ -89,10 +89,10 @@
 
 .editor19__animation-area__text {
    
-
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 2vw;
+    color: #fff;
 
     @keyframes neonGlow {
         0% {
@@ -118,7 +118,6 @@
 
     }
     
-
     @keyframes bounce {
         0%, 100% {
           transform: translateY(0);
@@ -127,5 +126,4 @@
           transform: translateY(-20px);
         }
       }
-
 }

@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultCodes = {
         html: `
 <div class="editor14__animation-area__text">
-            <span> Ponur to giga szef</span>
-            <span> Ponur to giga szef</span>
-          </div>
+            <span>POMEO</span>
+            <span>POMEO</span>
+</div>
         `,
         scss: `
 .editor14__animation-area__text {

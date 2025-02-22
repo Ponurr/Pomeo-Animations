@@ -7,29 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultCodes = {
         html: `
 <div class="editor17__animation-area__text">
-            <h1>
-            <em><a>P</a></em>
-            <em class="planet left">O</em>
-            <em>M</em>
-            <em>E</em>
-            <em class="planet right">O</em>
-            
-          </h1>
-        </div>
+    <h1>
+      <em><a>P</a></em>
+      <em class="planet left">O</em>
+      <em>M</em>
+      <em>E</em>
+      <em class="planet right">O</em>
+    </h1>
+</div>
         `,
         scss: `
 .editor17__animation-area__text {
     font-size: 2rem;
     color: #fff;
     text-align: center;
-    
-
-
 
 h1 {
     margin: 0;
     height: 12vmin;
-    width: 22vw;
+    width: 15vw;
     display: flex;
     justify-content: center;
     position: relative;
@@ -57,14 +53,10 @@ h1 {
     font-style: normal;
     width: 20vmin;
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
   }
   a {
       color: purple !important;
-  
-  
-  
-  
   }
   
   em.planet {
@@ -87,14 +79,14 @@ h1 {
   }
   
   em.planet.left {
-    -webkit-transform-origin: 20vw 5vw;
-    transform-origin: 10vw 2vw;
+    -webkit-transform-origin: 0vw 1vw;
+    transform-origin: 6vw 1vw;
     color: purple;
   }
   
   em.planet.right {
-    -webkit-transform-origin: 0vw 5vw;
-    transform-origin: -4.8vw 3vw;
+    -webkit-transform-origin: 0vw 1vw;
+    transform-origin: -3vw 1vw;
   }
   
   @-webkit-keyframes planet-rotate {
@@ -108,7 +100,7 @@ h1 {
       transform: rotate(1turn);
     }
   }    
-}  
+}
         `,
         js: `
 

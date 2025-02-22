@@ -6,68 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-  <div class="editor19__animation-area__text"> <div class="main">
-            <svg viewBox="0 0 800 300">
-              <symbol id="s-text">
-                  <text text-anchor="middle" x="50%" y="40%" class="text--line">
-                      pomeo
-                  </text>
-                  <text text-anchor="middle" x="50%" y="75%" class="text--line2">
-                      Space
-                  </text>
-              </symbol>
-    
-              <g class="g-ants">
-                  <use xlink:href="#s-text" class="text-copy"></use>
-                  <use xlink:href="#s-text" class="text-copy"></use>
-                  <use xlink:href="#s-text" class="text-copy"></use>
-                  <use xlink:href="#s-text" class="text-copy"></use>
-                  <use xlink:href="#s-text" class="text-copy"></use>
-              </g>
-          </svg>
-           
-  </div>
+    <div class="editor19__animation-area__text">   
+          <span>POMEO</span>  
+    </div>
         `,
         scss: `
 .editor19__animation-area__text {
    
-
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 2vw;
-    
-    svg {
-        width: 100%;
-        height: 100%;
-    }
+    color: #fff;
 
-    text {
-        font-size: 4.6vw;
-        font-family: "Arial", sans-serif;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #000000;
-        stroke-width: $stroke-width;
-    }
-
-    .text-copy {
-        fill: none;
-        stroke-width: $stroke-width;
-        stroke-linecap: round;
-        stroke-dasharray: 0, 100%; // Początkowo ukryty tekst
-        animation: draw-text $animation-duration forwards ease-in-out infinite;
-
-        @for $i from 1 through length($colors) {
-            &:nth-child(#{$i}) {
-                stroke: nth($colors, $i);
-                animation-delay: ($i - 1) * 0.2s;
-            }
+    @keyframes neonGlow {
+        0% {
+          text-shadow: 0 0 5px #ff00d4, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
+          transform: translateX(-10px) rotate(-5deg);
         }
-    }
-    }
-  
+        50% {
+          text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+          transform: translateX(10px) rotate(5deg);
+        }
+        100% {
+          text-shadow: 0 0 5px #ff0088, 0 0 10px #ff0088, 0 0 15px #ff0088, 0 0 20px #ff0088, 0 0 25px #ff0088;
+          transform: translateX(-10px) rotate(-5deg);
+        }
+      }
 
+    span{
+        width: 30vw;
+        font-size: 1.8vw;
+        font-family: "ponur";
 
+        animation: neonGlow 1.5s ease-in-out infinite, bounce 2s ease-in-out infinite;
+
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+}
         `,
         js: `
 

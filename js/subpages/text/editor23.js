@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>M</span>
             <span>E</span>
             <span>O</span>
-          </div></div>
+ </div></div>
         `,
         scss: `
 .editor23__animation-area__text {

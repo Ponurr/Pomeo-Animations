@@ -6,11 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
- <div class="editor16__animation-area__text"> <div class="main">
-           
-            <span> MATI PAPI BIGGEST PLAYER</span>
-           
-  </div>
+<div class="editor16__animation-area__text">
+      <span>POMEO</span>
+</div>
         `,
         scss: `
 .editor16__animation-area__text {
@@ -18,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     font-size: 2vw;
     font-family: "ponur";
     animation: jump 2s ease 0s infinite normal forwards;
+    color: #fff;
   
     span {
       
@@ -47,8 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
-
         `,
         js: `
 
