@@ -6,26 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor11__animation-area__text"><span>POMEOSPACE</span></div>
+<div class="editor__animation-area__text"><span>POMEOSPACE</span></div>
         `,
         scss: `
- .editor11__animation-area__text {
+.editor__animation-area__text {
     font-size: 2rem;
     color: #fff;
     text-align: center;
-    animation: shake 0.3s infinite;
+    animation: slideLeftRight 3s infinite linear;
 
-
+    @keyframes slideLeftRight {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(20px);
+        }
+    }
 }
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-5px, 0); }
-    50% { transform: translate(5px, 0); }
-    75% { transform: translate(-5px, 0); }
-    100% { transform: translate(0, 0); }
-}
-
-    
         `,
         js: `
 
