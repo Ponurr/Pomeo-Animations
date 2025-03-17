@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+header {
+  overflow-x: hidden;
+}
+
 main {
   margin-left: 2vw;
   margin-right: 2vw;

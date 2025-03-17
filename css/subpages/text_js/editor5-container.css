@@ -78,7 +78,6 @@
   font-size: 2rem;
   color: #fff;
   text-align: center;
-  animation: fadeIn 2s infinite;
 }
 .editor5__animation-area__text .blur-text span {
   display: inline-block;

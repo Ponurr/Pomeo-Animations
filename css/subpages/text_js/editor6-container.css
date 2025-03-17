@@ -78,7 +78,6 @@
   font-size: 2rem;
   color: #fff;
   text-align: center;
-  animation: fadeIn 2s infinite;
 }
 .editor6__animation-area__text .looping-text span {
   display: inline-block;

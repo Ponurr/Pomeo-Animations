@@ -78,7 +78,6 @@
   font-size: 2rem;
   color: #fff;
   text-align: center;
-  animation: fadeIn 2s infinite;
 }
 .editor4__animation-area__text .shaking-text span {
   display: inline-block;
