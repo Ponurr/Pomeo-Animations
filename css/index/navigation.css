@@ -10,7 +10,7 @@
 .navigation .navigation-container {
   width: 100%;
   height: 5vw;
-  background-color: #EBEBEB;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,24 +21,40 @@
   position: relative;
   width: 100%;
 }
-.navigation .navigation-container .navigation__container-content span {
+.navigation .navigation-container .navigation__container-content .navigation__container-content-logo {
+  margin-left: -39vw;
+}
+.navigation .navigation-container .navigation__container-content .navigation__container-content-logo img {
+  height: 5vw;
+  width: 11vw;
+}
+.navigation .navigation-container .navigation__container-content .navigation__container-content-subpages {
+  height: 3vw;
+  width: 40vw;
+  border-radius: 2vw;
+  background-color: rgba(182, 182, 182, 0.315);
+  display: flex;
+  gap: 3vw;
+  margin-top: 1.15vw;
+  margin-left: -37vw;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .navigation-container .navigation__container-content .navigation__container-content-subpages span {
   border-radius: 0.3vw;
   text-decoration: none;
   cursor: pointer;
-  border: 0.1vw solid rgb(0, 0, 0);
-  padding: 0.5vw;
   font-family: "ponur";
-  font-weight: 750;
-  font-size: 1.3vw;
+  font-size: 1vw;
   letter-spacing: 0.1vw;
   display: inline-block;
   color: rgb(0, 0, 0);
-  transition: all 0.8s;
+  transition: all 0.3s;
 }
-.navigation .navigation-container .navigation__container-content span:hover {
+.navigation .navigation-container .navigation__container-content .navigation__container-content-subpages span:hover {
   text-decoration: none;
   transform: scale(1.1);
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(235, 235, 235, 0.438);
   color: rgb(92, 0, 95);
 }
 
