@@ -4,4 +4,12 @@
   box-sizing: border-box;
 }
 
+main {
+  margin-left: 2vw;
+  margin-right: 2vw;
+  background-color: rgb(255, 255, 255);
+  height: 50vw;
+  width: 100%;
+}
+
 /*# sourceMappingURL=index.css.map */
