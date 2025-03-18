@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="looping-text">Płynny6 Tekst</p>
+<p class="looping-text">POMEOSPACE</p>
 
         `,
         scss: `

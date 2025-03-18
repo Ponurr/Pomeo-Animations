@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
     const defaultCodes = {
         html: `
-<p class="wave-text">Pomeo Space</p>
+<p class="wave-text">POMEOSPACE</p>
 
         `,
         scss: `

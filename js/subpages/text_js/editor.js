@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor__animation-area__text">Przykładowa Animacja</div>
+<div class="editor__animation-area__text">POMEOSPACE</div>
         `,
         scss: `
 .editor__animation-area__text {

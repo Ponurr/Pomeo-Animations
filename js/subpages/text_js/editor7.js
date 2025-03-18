@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="magnetic-text">Magnetyczny Tekst 7(poruszaj myszka) </p>
+<p class="magnetic-text">POMEOSPACE (mouse)</p>
 
         `,
         scss: `

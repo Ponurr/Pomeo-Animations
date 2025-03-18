@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="blur-text">Rozmazany5  Tekst</p>
+<p class="blur-text">POMEOSPACE</p>
 
         `,
         scss: `
