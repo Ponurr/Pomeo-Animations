@@ -1,4 +1,4 @@
-.editor9 {
+.editor10 {
     width: 50VW;
     margin: 2vw auto;
     background: #1a1a1a;
@@ -8,12 +8,12 @@
     position: relative;
 }
 
-.editor9__tabs {
+.editor10__tabs {
     display: flex;
     border-bottom: 0.1vw solid #333;
     background: #2a2a2a;
 
-    .editor9__tabs__button {
+    .editor10__tabs__button {
         padding: 1vw 2vw;
         border: none;
         background: none;
@@ -23,33 +23,33 @@
         border-radius: 0.4vw 0.4vw 0 0;
         transition: background 0.3s;
 
-        &.editor9__tabs__button--active {
+        &.editor10__tabs__button--active {
             background: #333;
         }
 
-        &:hover:not(.editor9__tabs__button--active) {
+        &:hover:not(.editor10__tabs__button--active) {
             background: #3a3a3a;
         }
     }
 }
 
-.editor9__main-content {
+.editor10__main-content {
     display: flex;
     height: 35vw;
 }
 
-.editor9__code-menu {
+.editor10__code-menu {
     width: 0;
     background: #2a2a2a;
     transition: width 0.3s ease;
     overflow: hidden;
     position: relative;
 
-    &.editor9__code-menu--expanded {
+    &.editor10__code-menu--expanded {
         width: 30vw;
     }
 
-    .editor9__code-menu__input {
+    .editor10__code-menu__input {
         width: 100%;
         height: 100%;
         background: #1a1a1a;
@@ -66,13 +66,13 @@
         opacity: 0;
         transition: opacity 0.3s ease;
 
-        &.editor9__code-menu__input--visible {
+        &.editor10__code-menu__input--visible {
             opacity: 1;
         }
     }
 }
 
-.editor9__animation-area {
+.editor10__animation-area {
     flex: 1;
     background: #1a1a1a;
     display: flex;
@@ -80,15 +80,14 @@
     align-items: center;
 }
 
-.editor9__animation-area__text {
+.editor10__animation-area__text {
     font-size: 2rem;
     color: #fff;
     text-align: center;
     
-    .wavy-3d-text span {
+    .fire-text span {
         display: inline-block;
-        transform: translate3d(0, 0, 0);
-        transition: transform 0.1s;
+        transition: transform 1s ease-out, opacity 1s ease-out;
       }
    
     }
