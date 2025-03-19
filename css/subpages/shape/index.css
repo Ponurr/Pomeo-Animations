@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgba(255, 255, 255, 0.445);
+  overflow-x: hidden;
+}
+
+header {
+  overflow-x: hidden;
+}
+
 main {
-  margin-left: 2vw;
-  margin-right: 2vw;
   background-color: rgb(255, 255, 255);
   height: 50vw;
   width: 100%;
