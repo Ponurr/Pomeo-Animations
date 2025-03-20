@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons = document.querySelectorAll('.editor17__tabs__button');
-    const codeMenu = document.getElementById('codeMenu_js17');
-    const codeInput = document.querySelector('.editor17__code-menu__input');
+    const tabButtons = document.querySelectorAll('.editor19__tabs__button');
+    const codeMenu = document.getElementById('codeMenu_js19');
+    const codeInput = document.querySelector('.editor19__code-menu__input');
 
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
@@ -57,15 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Przełączanie zakładek i rozszerzanie menu
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-            tabButtons.forEach(btn => btn.classList.remove('editor17__tabs__button--active'));
-            button.classList.add('editor17__tabs__button--active');
+            tabButtons.forEach(btn => btn.classList.remove('editor19__tabs__button--active'));
+            button.classList.add('editor19__tabs__button--active');
 
             const tab = button.getAttribute('data-tab');
-            codeMenu.classList.add('editor17__code-menu--expanded');
+            codeMenu.classList.add('editor19__code-menu--expanded');
 
             // Wypełnij pole tekstowe odpowiednim przykładowym kodem (możesz go zmienić ręcznie)
             codeInput.value = defaultCodes[tab] || '';
-            codeInput.classList.add('editor17__code-menu__input--visible');
+            codeInput.classList.add('editor19__code-menu__input--visible');
 
             // Ustaw focus na polu tekstowym, aby łatwiej edytować
             codeInput.focus();
@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Kliknięcie poza menu zamyka je (opcjonalne)
     document.addEventListener('click', (e) => {
         if (!codeMenu.contains(e.target) && !Array.from(tabButtons).some(btn => btn.contains(e.target))) {
-            codeMenu.classList.remove('editor17__code-menu--expanded');
-            codeInput.classList.remove('editor17__code-menu__input--visible');
+            codeMenu.classList.remove('editor19__code-menu--expanded');
+            codeInput.classList.remove('editor19__code-menu__input--visible');
             codeInput.value = ''; // Wyczyść pole po zamknięciu
         }
     });
