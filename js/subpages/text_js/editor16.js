@@ -6,47 +6,74 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+<h2 class="text-anim-explode" data-text-anim-explode>POMEOSPACE (scroll)</h2>
 
         `,
         scss: `
-  .explode-text span {
+ .text-anim-explode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    &__char {
+        opacity: 0;
+        transform: translateY(80px) scale(0.8) rotate(-10deg);
         display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
-      }
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    &--visible {
+        opacity: 1;
+        transform: translateY(0);
+
+        .text-anim-explode__char {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(0);
+        }
+    }
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+const explodeTextObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      el.classList.add('text-anim-explode--visible');
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+      const letters = el.querySelectorAll('.text-anim-explode__char');
+      letters.forEach((letter, index) => {
+        letter.style.transitionDelay = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
       });
-    }, 4000); // Powrót po 4 sekundach
+    } else {
+      // Gdy element znika z ekranu – resetujemy animację
+      entry.target.classList.remove('text-anim-explode--visible');
+      entry.target.querySelectorAll('.text-anim-explode__char').forEach(letter => {
+        letter.style.transitionDelay = '0ms'; // Resetujemy opóźnienie
+      });
+    }
   });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('[data-text-anim-explode]').forEach(el => {
+  const originalText = el.textContent.trim();
+  el.innerHTML = '';
+
+  originalText.split('').forEach(char => {
+    const span = document.createElement('span');
+    span.classList.add('text-anim-explode__char');
+    span.textContent = char === ' ' ? (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
+ : char; // Uwzględnia spacje
+    el.appendChild(span);
+  });
+
+  explodeTextObserver.observe(el);
 });
 
 

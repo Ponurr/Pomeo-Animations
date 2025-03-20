@@ -6,48 +6,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+<p class="wavy-3d-text">PONURPONURPONUR (SCROLL)</p>
 
         `,
         scss: `
-  .explode-text span {
+ .wavy-3d-text span {
         display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.1s;
       }
 
         `,
         js: `
 document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
+  const textElement = document.querySelector(".wavy-3d-text");
   const text = textElement.innerText;
   textElement.innerHTML = "";
 
-  text.split("").forEach(char => {
+  text.split("").forEach((char, index) => {
     let span = document.createElement("span");
     span.textContent = char;
     textElement.appendChild(span);
+    span.style.transform = (!!linijka do skopiowania z kodu bo nie da się jej tu wkleić!!)
   });
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY / 10;
+    document.querySelectorAll(".wavy-3d-text span").forEach((span, index) => {
+      span.style.transform = (!!linijka do skopiowania z kodu bo nie da się jej tu wkleić!!)
     });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
   });
 });
+
 
 
 

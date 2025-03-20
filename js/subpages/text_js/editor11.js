@@ -6,19 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+<p class="glitch-text">POMEOSPACE</p>
 
         `,
         scss: `
-  .explode-text span {
+  .glitch-text span {
         display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
+        transition: transform 0.1s, color 0.1s;
       }
+      
 
         `,
         js: `
 document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
+  const textElement = document.querySelector(".glitch-text");
   const text = textElement.innerText;
   textElement.innerHTML = "";
 
@@ -28,26 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
     textElement.appendChild(span);
   });
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
+  setInterval(() => {
+    document.querySelectorAll(".glitch-text span").forEach(span => {
+      if (Math.random() > 0.7) {
+        let x = (Math.random() - 0.5) * 10;
+        let y = (Math.random() - 0.5) * 10;
+        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
+        span.style.color = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
+      } else {
+        span.style.transform = "translate(0, 0)";
+        span.style.color = "";
+      }
     });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
+  }, 100);
 });
+
 
 
 

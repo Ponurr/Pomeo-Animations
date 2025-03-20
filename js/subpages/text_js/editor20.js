@@ -5,48 +5,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+ <div class="flip-card">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__front">POMEO</div>
+                            <div class="flip-card__back">SPACE</div>
+                        </div>
+                    </div>
 
         `,
         scss: `
-  .explode-text span {
-        display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
-      }
+   .flip-card {
+        width: 15vw;
+        height: 10vw;
+        perspective: 100vw;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+    }
+    
+    .flip-card--visible {
+        opacity: 1;
+    }
+    
+    .flip-card__inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 2.0s ease-in-out;
+    }
+    
+    .flip-card--visible .flip-card__inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card__front, .flip-card__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+    
+    .flip-card__front {
+        background: #49006E;
+        color: white;
+    }
+    
+    .flip-card__back {
+        background: #ffffff;
+        color: #49006E;
+        transform: rotateY(180deg);
+    }
+    
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
-
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
+const flipCardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('flip-card--visible');
+    } else {
+      entry.target.classList.remove('flip-card--visible');
+    }
   });
+}, { threshold: 0.4 });
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
+document.querySelectorAll('.flip-card').forEach(el => {
+  flipCardObserver.observe(el);
 });
+
 
 
 

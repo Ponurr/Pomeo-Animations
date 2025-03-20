@@ -6,48 +6,56 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+<p class="fire-text">POMEOSPACE</p>
 
         `,
         scss: `
-  .explode-text span {
+  
+  .fire-text span {
         display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
+        transition: transform 1s ease-out, opacity 1s ease-out;
       }
-
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
+      document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.querySelector(".fire-text");
   const text = textElement.innerText;
   textElement.innerHTML = "";
 
-  text.split("").forEach(char => {
+  text.split("").forEach((char, index) => {
     let span = document.createElement("span");
     span.textContent = char;
     textElement.appendChild(span);
   });
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
+  function explodeAndReset() {
+    document.querySelectorAll(".fire-text span").forEach((span, index) => {
+      let x = (Math.random() - 0.5) * 50; // Mniejszy rozrzut
+      let y = (Math.random() - 0.5) * 80;
+      let rotation = Math.random() * 40 - 20;
 
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
+      setTimeout(() => {
+        span.style.transition = "transform 1s ease-out, opacity 1s ease-out";
+        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
+        span.style.opacity = "0";
+      }, index * 100); // Opóźnienie dla płynności
     });
 
     setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
+      document.querySelectorAll(".fire-text span").forEach((span, index) => {
+        setTimeout(() => {
+          span.style.transition = "transform 1s ease-in, opacity 1s ease-in";
+          span.style.transform = "translate(0, 0) rotate(0deg)";
+          span.style.opacity = "1";
+        }, index * 50);
       });
     }, 4000); // Powrót po 4 sekundach
-  });
+  }
+
+  setInterval(explodeAndReset, 8000); // Efekt powtarza się co 8 sekund
+  explodeAndReset(); 
 });
+
 
 
 
