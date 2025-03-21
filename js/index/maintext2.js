@@ -1,33 +1,45 @@
 const explodeTextObserver2 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+    entries.forEach(entry => {
+      const chars = entry.target.querySelectorAll('.text-anim-explode2__char');
+  
       if (entry.isIntersecting) {
-          const el = entry.target;
-          el.classList.add('text-anim-explode2--visible');
-
-          const letters = el.querySelectorAll('.text-anim-explode2__char');
-          letters.forEach((letter, index) => {
-              letter.style.transitionDelay = `${index * 50}ms`;
-          });
+        chars.forEach((char, index) => {
+          char.style.transitionDelay = `${index * 30}ms`; // opcjonalny efekt falowania
+          char.classList.add('text-anim-explode2__char--visible');
+        });
       } else {
-          // Reset animacji po wyjściu z ekranu
-          entry.target.classList.remove('text-anim-explode2--visible');
-          entry.target.querySelectorAll('.text-anim-explode2__char').forEach(letter => {
-              letter.style.transitionDelay = '0ms';
-          });
+        chars.forEach(char => {
+          char.classList.remove('text-anim-explode2__char--visible');
+          char.style.transitionDelay = '';
+        });
       }
+    });
+  }, { threshold: 0.3 });
+  
+  document.querySelectorAll('[data-text-anim-explode2]').forEach(el => {
+    const originalText = el.textContent.trim();
+    el.innerHTML = '';
+  
+    // dzielenie na słowa
+    originalText.split(' ').forEach((word, wordIndex) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.classList.add('text-anim-explode2__word');
+  
+      word.split('').forEach(char => {
+        const charSpan = document.createElement('span');
+        charSpan.classList.add('text-anim-explode2__char');
+        charSpan.textContent = char;
+        wordSpan.appendChild(charSpan);
+      });
+  
+      el.appendChild(wordSpan);
+  
+      // dodanie spacji po słowie (nie przed, żeby nie rozjechać stylu)
+      if (wordIndex < originalText.split(' ').length - 1) {
+        el.appendChild(document.createTextNode('\u00A0')); // niełamliwa spacja
+      }
+    });
+  
+    explodeTextObserver2.observe(el);
   });
-}, { threshold: 0.4 });
-
-document.querySelectorAll('[data-text-anim-explode2]').forEach(el => {
-  const originalText = el.textContent.trim();
-  el.innerHTML = '';
-
-  originalText.split('').forEach(char => {
-      const span = document.createElement('span');
-      span.classList.add('text-anim-explode2__char');
-      span.textContent = char === ' ' ? '\u00A0' : char; // Uwzględnia spacje
-      el.appendChild(span);
-  });
-
-  explodeTextObserver2.observe(el);
-});
+  
