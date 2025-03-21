@@ -6,48 +6,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+ <div class="scale-in">
+                        <h2>POMEOSPACE (scroll)</h2>
+                    </div>
 
         `,
         scss: `
-  .explode-text span {
-        display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
-      }
+  .scale-in {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(10px);
+        transition: transform 0.6s ease-out, opacity 0.6s ease-out, filter 0.6s ease-out;
+    }
+    
+    .scale-in--visible {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    
+    
+   
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
-
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
+const scaleInObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Gdy element wejdzie na ekran – dodajemy klasę aktywującą animację
+      entry.target.classList.add('scale-in--visible');
+    } else {
+      // Gdy element zniknie z ekranu – resetujemy animację
+      entry.target.classList.remove('scale-in--visible');
+    }
   });
+}, { threshold: 0.4 }); // 40% elementu musi być widoczne, żeby odpalić
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
+// Pobieramy wszystkie elementy z klasą "scale-in" i obserwujemy je
+document.querySelectorAll('.scale-in').forEach(el => {
+  scaleInObserver.observe(el);
 });
+
 
 
 

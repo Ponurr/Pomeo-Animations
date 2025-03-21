@@ -6,48 +6,56 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+ <h2 class="smoke-text">POMEOSPACE dym!</h2>
 
         `,
         scss: `
-  .explode-text span {
-        display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
-      }
+  .smoke-text {
+        font-size: 3vw;
+        font-weight: bold;
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.4s ease-out;
+    }
+    
+    .smoke-text::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        opacity: 0;
+        filter: blur(20px);
+        transition: opacity 0.8s ease-out, filter 0.8s ease-out;
+    }
+    
+    .smoke-text--visible {
+        opacity: 1;
+    }
+    
+    .smoke-text--visible::before {
+        opacity: 1;
+        filter: blur(0);
+    }
+    
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
-
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
+const smokeTextObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('smoke-text--visible');
+    } else {
+      entry.target.classList.remove('smoke-text--visible');
+    }
   });
+}, { threshold: 0.4 });
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
-
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
+document.querySelectorAll('.smoke-text').forEach(el => {
+  el.setAttribute('data-text', el.textContent);
+  smokeTextObserver.observe(el);
 });
+
 
 
 

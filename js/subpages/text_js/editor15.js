@@ -3,51 +3,95 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeMenu = document.getElementById('codeMenu_js15');
     const codeInput = document.querySelector('.editor15__code-menu__input');
 
-    // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
+    
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+<div class="glitch-typewriter">
+                    <span id="glitch__text"></span>
+                  </div>
 
         `,
         scss: `
-  .explode-text span {
-        display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
+  .glitch-typewriter {
+        font-family: monospace;
+        font-size: 2rem;
+        color: #fff;
+        background: #000;
+        padding: 1rem;
+        width: fit-content;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      
+        &::after {
+          content: '|';
+          position: absolute;
+          right: 0;
+          animation: blink 0.7s infinite;
+        }
+      
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+      
+        .glitch-letter {
+          display: inline-block;
+          position: relative;
+      
+          &::before, &::after {
+            content: attr(data-char);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #0ff;
+            opacity: 0.6;
+            transform: translateX(1px);
+          }
+      
+          &::after {
+            color: #f0f;
+            transform: translateX(-1px);
+          }
+        }
       }
+      
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+const text = "POMEOSPACE";
+const container = document.getElementById("glitch__text");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+function typeGlitch(callback) {
+  container.innerHTML = "";
+  let i = 0;
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
+  function type() {
+    if (i < text.length) {
+      const char = text[i];
+      const span = document.createElement("span");
+      span.className = "glitch-letter";
+      span.setAttribute("data-char", char);
+      span.textContent = char;
+      container.appendChild(span);
+      i++;
+      setTimeout(type, 80 + Math.random() * 100);
+    } else {
+      // Po zakończeniu pisania – czekaj 5s i zresetuj
+      setTimeout(() => {
+        container.innerHTML = "";
+        // wywołujemy ponownie typeGlitch – zapętlamy animację
+        typeGlitch(callback);
+      }, 4000);
+    }
+  }
 
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
+  type();
+}
 
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
-});
+// Startujemy zapętloną animację
+typeGlitch();
+
 
 
 
