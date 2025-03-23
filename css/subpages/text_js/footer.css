@@ -13,7 +13,8 @@
   background-size: cover;
   background-image: url(../../../design/layered-waves-footer-transparent.svg);
   height: 20vw;
-  width: 100%;
+  width: 95.3vw;
+  margin-left: 2.35vw;
   border-top-left-radius: 2vw;
   border-top-right-radius: 2vw;
 }
