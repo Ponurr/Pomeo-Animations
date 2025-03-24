@@ -125,4 +125,12 @@
   filter: grayscale(10);
 }
 
+.separator__number {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 2vw;
+  letter-spacing: 0.05em;
+  color: #222;
+}
+
 /*# sourceMappingURL=editor-container.css.map */
