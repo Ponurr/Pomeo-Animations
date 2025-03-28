@@ -88,7 +88,7 @@
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
-  animation: waveEffect 1s ease-in-out forwards;
+  animation: waveEffect 2s ease-in-out forwards infinite;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 @keyframes waveEffect {

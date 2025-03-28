@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-  <div class="block1"></div>
+  <div class="block8"></div>
         `,
         scss: `
    .block8 {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         border-radius: 1.5rem;
         overflow: hidden;
         position: relative; 
-        animation: bounceInElastic 1.2s cubic-bezier(0.5, -0.5, 0.3, 1.5) forwards;
+        animation: bounceInElastic 2s cubic-bezier(0.5, -0.5, 0.3, 1.5) forwards infinite;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       
       

@@ -88,7 +88,7 @@
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
-  animation: flipIn 1s ease-out forwards;
+  animation: flipIn 2s ease-out forwards infinite;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 @keyframes flipIn {
