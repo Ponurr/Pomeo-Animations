@@ -96,31 +96,22 @@
         border-radius: 1.5rem;
         overflow: hidden;
         position: relative; 
-        animation: explodeIn 2s ease-out forwards infinite;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-       
-      
-       
-      }
-      
-      @keyframes explodeIn {
-        0% {
-          transform: scale(0);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.2);
-          opacity: 0.8;
-        }
-        70% {
-          transform: scale(0.9);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      
+        opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.block11.active {
+    opacity: 1;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
     }
     
 

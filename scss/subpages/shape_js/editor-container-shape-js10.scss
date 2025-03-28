@@ -96,29 +96,15 @@
         border-radius: 1.5rem;
         overflow: hidden;
         position: relative; 
-        animation: waveEffect 2s ease-in-out forwards infinite;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      
-      
-     
-      }
-      
-     
-      @keyframes waveEffect {
-        0% {
-          transform: perspective(500px) rotateX(-30deg);
-          opacity: 0;
-        }
-        50% {
-          transform: perspective(500px) rotateX(10deg);
-          opacity: 0.8;
-        }
-        100% {
-          transform: perspective(500px) rotateX(0deg);
-          opacity: 1;
-        }
-      }
-      
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.block10.active {
+    opacity: 1;
+    transform: translateX(0);
+}
     }
     
 
