@@ -91,4 +91,81 @@
     max-width: 60%;
   }
   
+
+.cube1 {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-40deg) rotateY(300deg);
+  margin-right: -138vw;
+  margin-top: -22vw;
+
+  .face {
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-color: #49006E;
+    border: 0.1vw solid #fff; 
+    box-sizing: border-box;
+  }
   
+  .front {
+    transform: translateZ(2.6vw); 
+  }
+  
+  .top {
+    transform: translateY(-2.6vw) rotateX(90deg); 
+  }
+  
+  .right {
+    transform: translateX(2.6vw) rotateY(90deg);
+  }
+
+}
+
+.cube2 {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(-40deg) rotateY(330deg);
+  margin-top: 22vw;
+  margin-left: -50vw;
+
+}
+
+.cube3 {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg) rotateY(-210deg);
+  margin-left: -32vw;
+  margin-top: 28vw;
+
+}
+
+.cube4 {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(50deg) rotateY(150deg);
+  margin-left: -19vw;
+  margin-top: 23vw;
+
+}
+
+.face {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  background-color: #49006E;
+  border: 0.1vw solid #fff; 
+  box-sizing: border-box;
+}
+
+.front {
+  transform: translateZ(2.02vw); 
+}
+
+.top {
+  transform: translateY(-2.02vw) rotateX(90deg); 
+}
+
+.right {
+  transform: translateX(2.02vw) rotateY(90deg);
+}

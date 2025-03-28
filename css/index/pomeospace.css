@@ -48,9 +48,7 @@
 .pomeospace__content-box-link i {
   font-size: 1vw;
   color: #000000;
-}
-.pomeospace__content-box-link i:hover {
-  color: #49006E;
+  transition: all 0.2s;
 }
 
 .pomeospace__content-box-link:hover {
