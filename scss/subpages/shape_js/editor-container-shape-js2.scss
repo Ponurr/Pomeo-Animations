@@ -1,5 +1,5 @@
 
-.editor {
+.editor2 {
     width: 50VW;
     margin: 2vw auto;
     background: #1a1a1a;
@@ -9,12 +9,12 @@
     position: relative;
 }
 
-.editor__tabs {
+.editor2__tabs {
     display: flex;
     border-bottom: 0.1vw solid #333;
     background: #2a2a2a;
 
-    .editor__tabs__button {
+    .editor2__tabs__button {
         padding: 1vw 2vw;
         border: none;
         background: none;
@@ -24,33 +24,33 @@
         border-radius: 0.4vw 0.4vw 0 0;
         transition: background 0.3s;
 
-        &.editor__tabs__button--active {
+        &.editor2__tabs__button--active {
             background: #333;
         }
 
-        &:hover:not(.editor__tabs__button--active) {
+        &:hover:not(.editor2__tabs__button--active) {
             background: #3a3a3a;
         }
     }
 }
 
-.editor__main-content {
+.editor2__main-content {
     display: flex;
     height: 35vw;
 }
 
-.editor__code-menu {
+.editor2__code-menu {
     width: 0;
     background: #2a2a2a;
     transition: width 0.3s ease;
     overflow: hidden;
     position: relative;
 
-    &.editor__code-menu--expanded {
+    &.editor2__code-menu--expanded {
         width: 30vw;
     }
 
-    .editor__code-menu__input {
+    .editor2__code-menu__input {
         width: 100%;
         height: 100%;
         background: #1a1a1a;
@@ -67,13 +67,13 @@
         opacity: 0;
         transition: opacity 0.3s ease;
 
-        &.editor__code-menu__input--visible {
+        &.editor2__code-menu__input--visible {
             opacity: 1;
         }
     }
 }
 
-.editor__animation-area {
+.editor2__animation-area {
     flex: 1;
     background: #1a1a1a;
     display: flex;
@@ -81,13 +81,13 @@
     align-items: center;
 }
 
-.editor__animation-area__text {
+.editor2__animation-area__text {
     font-size: 2rem;
     color: #fff;
     text-align: center;
    
 
-    .block1 {
+    .block2 {
         width: 10vw;
         height: 10vw;
         background-color: purple;
@@ -97,16 +97,16 @@
         overflow: hidden;
         position: relative; 
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        transition: transform 0.5s ease-in-out, opacity 0.5s;
-        opacity: 0;
-        transform: scale(0.8);
+        transition: transform 0.8s ease-in-out, opacity 0.8s;
+    opacity: 0;
+    transform: translateX(-100px) rotate(-90deg);
+}
+
+.block2.active {
+    opacity: 1;
+    transform: translateX(0) rotate(360deg);
+}
     }
-    
-    .block1.active {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-  }
     
 
 .about-us-seperator{
