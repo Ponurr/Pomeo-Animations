@@ -48,62 +48,77 @@
   0% {
     content: "P";
   }
-  5% {
+  4% {
     content: "PO";
   }
-  10% {
+  8% {
     content: "POM";
   }
-  15% {
+  12% {
     content: "PO ";
   }
-  20% {
+  16% {
     content: "POM";
   }
-  25% {
+  20% {
     content: "POME";
   }
-  30% {
+  24% {
     content: "POMEO";
   }
-  35% {
-    content: "POMEOA";
+  28% {
+    content: "POME";
   }
-  40% {
+  32% {
     content: "POMEO ";
   }
-  45% {
+  36% {
     content: "POMEOA ";
   }
-  50% {
+  40% {
     content: "POMEOAN ";
   }
-  55% {
+  44% {
     content: "POMEOANI";
   }
+  48% {
+    content: "POMEOANIM";
+  }
+  52% {
+    content: "POMEOANI";
+  }
+  56% {
+    content: "POMEOANIM";
+  }
   60% {
-    content: "POMEOANIM";
-  }
-  65% {
     content: "POMEOANIMA";
   }
-  70% {
-    content: "POMEOANIM";
-  }
-  75% {
+  64% {
     content: "POMEOANIMA";
   }
-  80% {
+  68% {
     content: "POMEOANIMAT";
   }
-  85% {
+  72% {
     content: "POMEOANIMATI";
   }
-  90% {
+  76% {
     content: "POMEOANIMATIO";
   }
-  95% {
+  80% {
+    content: "POMEOANIMATI";
+  }
+  84% {
+    content: "POMEOANIMATIO";
+  }
+  88% {
     content: "POMEOANIMATION";
+  }
+  92% {
+    content: "POMEOANIMATIONS";
+  }
+  96% {
+    content: "POMEOANIMATIONS";
   }
   100% {
     content: "POMEOANIMATIONS";
