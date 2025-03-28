@@ -1,4 +1,4 @@
-.editor {
+.editor10 {
   width: 50VW;
   margin: 2vw auto;
   background: #1a1a1a;
@@ -8,12 +8,12 @@
   position: relative;
 }
 
-.editor__tabs {
+.editor10__tabs {
   display: flex;
   border-bottom: 0.1vw solid #333;
   background: #2a2a2a;
 }
-.editor__tabs .editor__tabs__button {
+.editor10__tabs .editor10__tabs__button {
   padding: 1vw 2vw;
   border: none;
   background: none;
@@ -23,29 +23,29 @@
   border-radius: 0.4vw 0.4vw 0 0;
   transition: background 0.3s;
 }
-.editor__tabs .editor__tabs__button.editor__tabs__button--active {
+.editor10__tabs .editor10__tabs__button.editor10__tabs__button--active {
   background: #333;
 }
-.editor__tabs .editor__tabs__button:hover:not(.editor__tabs__button--active) {
+.editor10__tabs .editor10__tabs__button:hover:not(.editor10__tabs__button--active) {
   background: #3a3a3a;
 }
 
-.editor__main-content {
+.editor10__main-content {
   display: flex;
   height: 35vw;
 }
 
-.editor__code-menu {
+.editor10__code-menu {
   width: 0;
   background: #2a2a2a;
   transition: width 0.3s ease;
   overflow: hidden;
   position: relative;
 }
-.editor__code-menu.editor__code-menu--expanded {
+.editor10__code-menu.editor10__code-menu--expanded {
   width: 30vw;
 }
-.editor__code-menu .editor__code-menu__input {
+.editor10__code-menu .editor10__code-menu__input {
   width: 100%;
   height: 100%;
   background: #1a1a1a;
@@ -62,11 +62,11 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.editor__code-menu .editor__code-menu__input.editor__code-menu__input--visible {
+.editor10__code-menu .editor10__code-menu__input.editor10__code-menu__input--visible {
   opacity: 1;
 }
 
-.editor__animation-area {
+.editor10__animation-area {
   flex: 1;
   background: #1a1a1a;
   display: flex;
@@ -74,12 +74,12 @@
   align-items: center;
 }
 
-.editor__animation-area__text {
+.editor10__animation-area__text {
   font-size: 2rem;
   color: #fff;
   text-align: center;
 }
-.editor__animation-area__text .block1 {
+.editor10__animation-area__text .block10 {
   width: 10vw;
   height: 10vw;
   background-color: purple;
@@ -88,14 +88,22 @@
   border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
+  animation: waveEffect 2s ease-in-out forwards infinite;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s ease-in-out, opacity 0.5s;
-  opacity: 0;
-  transform: scale(0.8);
 }
-.editor__animation-area__text .block1.active {
-  opacity: 1;
-  transform: scale(1.2);
+@keyframes waveEffect {
+  0% {
+    transform: perspective(500px) rotateX(-30deg);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(500px) rotateX(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: perspective(500px) rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 .about-us-seperator {
@@ -139,4 +147,4 @@
   color: #222;
 }
 
-/*# sourceMappingURL=editor-container-shape-js.css.map */
+/*# sourceMappingURL=editor-container-shape-js10.css.map */
