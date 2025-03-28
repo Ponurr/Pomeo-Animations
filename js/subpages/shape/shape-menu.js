@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeMenu = document.getElementById('shape-menu');
     const codeInput = document.querySelector('.editor__code-menu__input');
 
-    // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
   <div class="block1"></div>
