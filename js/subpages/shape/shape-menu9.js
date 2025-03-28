@@ -6,27 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor9__animation-area__text"><span>POMEOSPACE</span></div>
+  <div class="block1"></div>
         `,
         scss: `
-.editor9__animation-area__text {
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    animation: rotate3D 3s infinite linear;
-
+  .block9 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transform-style: preserve-3d;
+        animation: flip3D 1s ease-out forwards;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        
+      
+     
+      }
+      
+     
+      @keyframes flip3D {
+        0% {
+          transform: rotateY(90deg) scale(0.8);
+          opacity: 0;
         }
-        @keyframes rotate3D {
-            0% {
-                transform: rotateY(0deg);
-            }
-            50% {
-                transform: rotateY(180deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
+        50% {
+          transform: rotateY(-10deg) scale(1.05);
+          opacity: 1;
         }
+        100% {
+          transform: rotateY(0) scale(1);
+        }
+      }
+      
+      
         `,
         js: `
 

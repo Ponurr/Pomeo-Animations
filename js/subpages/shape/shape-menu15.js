@@ -6,62 +6,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor15__animation-area">
-          <div class="editor15__animation-area__text">
-            <span style="--i:1"> P</span>
-            <span style="--i:2"> O</span>
-            <span style="--i:4"> M</span>
-            <span style="--i:4"> E</span>
-            <span style="--i:5"> O</span>
-          </div>
+  <div class="block1"></div>
         `,
         scss: `
-.editor15__animation-area__text {
-    overflow: hidden;
-    width: 15vw;
-    height: 30vw;
-    align-items: center;
-    display: flex;
-    margin-left: -14vw;
-    justify-content: center;
-    position: relative;
-    color: #fff;
-
-    span{
-      display: inline-block;
-      width: 35vw;
-      font-size: 2vw;
-      font-family: "ponur";
-      font-weight: 300;
-      position: relative;
-      text-transform: uppercase;
-      animation: animate1 2s infinite;
-      animation-delay: calc(.2s * var(--i));
-    }
-
-      &:nth-child(1) {
-        left: 8vw;
+  .block15 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transform-style: preserve-3d;
+        animation: superEnter 1.2s ease-out forwards;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+     
+      
+   
       }
-      &:nth-child(2) {
-        left: 5.2vw;
+      @keyframes superEnter {
+        0% {
+          transform: translateX(-200px) rotate(-30deg) scale(0.5);
+          opacity: 0;
+          filter: blur(10px);
+        }
+        50% {
+          transform: translateX(10px) rotate(10deg) scale(1.1);
+          opacity: 0.8;
+          filter: blur(3px);
+        }
+        70% {
+          transform: translateX(-5px) rotate(-5deg) scale(1);
+          opacity: 1;
+          filter: blur(0);
+        }
+        85% {
+          transform: translateX(2px);
+        }
+        100% {
+          transform: translateX(0);
+        }
       }
-      &:nth-child(3) {
-        left: 3vw;
-      }
-      &:nth-child(4) {
-        left: 0.7vw;
-      }
-      &:nth-child(5){
-        left: -1.65vw;
-      }
-    }
-
-    @keyframes animate1 {
-      0%,
-      80% {
-        transform: rotateY(360deg);
-      }
-    }
         `,
         js: `
 

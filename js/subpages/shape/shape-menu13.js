@@ -6,79 +6,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor13__animation-area__text"><span></span></div>
+  <div class="block1"></div>
         `,
         scss: `
-.editor13__animation-area__text {
-
-    span{
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    animation: effect 2s infinite ease-in-out;
-    }
-    span:after{
-      content: "";
-      width: 100%;
-      height: 100%;
-      line-height: 48px;
-      left: 30%;
-      top: 50%;
-      animation: effect 7.5s linear infinite;
-      animation-fill-mode: forwards;
-  }
-}
-
-@keyframes effect {
-      0% {
-        content: "PO";
+  .block13 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transform-style: preserve-3d;
+        animation: wave3DD 1.5s ease-in-out forwards;
+      
+     
       }
-      6% {
-        content: "MEO";
+      
+     
+      @keyframes wave3DD {
+        0% {
+          transform: rotateY(30deg) scale(0.8);
+          opacity: 0;
+        }
+        25% {
+          transform: rotateY(-20deg) scale(1.1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: rotateY(15deg);
+          opacity: 1;
+        }
+        75% {
+          transform: rotateY(-10deg);
+        }
+        100% {
+          transform: rotateY(0) scale(1);
+        }
       }
-      12% {
-        content: "SPACE";
-      }
-      18% {
-        content: "POMEOSPACE ";
-      }
-      24% {
-        content: "";
-      }
-      30% {
-        content: "PO";
-      }
-      36% {
-        content: "POM";
-      }
-      42% {
-        content: "POMEO ";
-      }
-      50% {
-        content: "POME ";
-      }
-      56% {
-        content: "POMEO  ";
-      }
-      63% {
-        content: "POMEOS  ";
-      }
-      71% {
-        content: "POMEOSPA ";
-      }
-      80% {
-        content: "POMEOSP";
-      }
-      88% {
-        content: "POMEOSPAC";
-      }
-      94% {
-        content: "POMEOSPA";
-      }
-      100% {
-        content: "POMEOSPACE";
-      }
-}     
+      
         `,
         js: `
 
