@@ -6,55 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="ash-text">POMEOSPACE</p>
+ <div class="block12"></div>
 
         `,
         scss: `
-   .ash-text span {
-        display: inline-block;
-        transition: transform 1.5s ease-out, opacity 1.5s ease-out;
-      }
+    .block12 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    .block12.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".ash-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block12");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  function burnAndRebuild() {
-    document.querySelectorAll(".ash-text span").forEach((span, index) => {
-      let y = Math.random() * 100 + 50; // Opadanie w dół
-      let rotation = Math.random() * 60 - 30;
-      let delay = index * 50; // Stopniowe spalanie liter
-
-      setTimeout(() => {
-        span.style.transition = "transform 1.5s ease-out, opacity 1.5s ease-out";
-        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
-        span.style.opacity = "0";
-      }, delay);
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".ash-text span").forEach((span, index) => {
-        setTimeout(() => {
-          span.style.transition = "transform 2s ease-in, opacity 2s ease-in";
-          span.style.transform = "translateY(0) rotate(0deg)";
-          span.style.opacity = "1";
-        }, index * 80);
-      });
-    }, 4000);
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  setInterval(burnAndRebuild, 8000);
-  burnAndRebuild();
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

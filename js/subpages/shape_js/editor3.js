@@ -6,36 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="hidden-text">POMEOSPACE</p>
+<div class="block3"></div>
 
         `,
         scss: `
- .hidden-text span {
-        display: inline-block;
+ .block3 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    }
+    
+    .block3.active {
         opacity: 1;
-        transition: opacity 0.3s;
-      }
-      
+    }
+    
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".hidden-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block3");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  setInterval(() => {
-    document.querySelectorAll(".hidden-text span").forEach(span => {
-      span.style.opacity = Math.random() > 0.5 ? "0" : "1";
-    });
-  }, 300);
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
         `
     };

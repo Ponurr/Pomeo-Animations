@@ -6,55 +6,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="wavee-text">POMEOSPACE</p>
+ <div class="block13"></div>
 
         `,
         scss: `
-  .wavee-text span {
-        display: inline-block;
-        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-      }
+ .block13 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.block13.active {
+    opacity: 1;
+    animation: pulse-explosion 1.5s ease-in-out forwards;
+}
+
+@keyframes pulse-explosion {
+    0% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); }
+    25% { transform: scale(1.4); box-shadow: 0 0 50px rgba(255, 0, 255, 0.7); }
+    50% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); }
+    75% { transform: scale(1.2); box-shadow: 0 0 40px rgba(255, 0, 255, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); }
+}
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".wavee-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block13");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
 
-  function waveExplode() {
-    document.querySelectorAll(".wavee-text span").forEach((span, index) => {
-      let x = Math.sin(index) * 50;
-      let y = Math.cos(index) * 50;
-      let rotation = Math.random() * 40 - 20;
-
-      setTimeout(() => {
-        span.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
-        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
-        span.style.opacity = "0";
-      }, index * 80);
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".wavee-text span").forEach((span, index) => {
-        setTimeout(() => {
-          span.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
-          span.style.transform = "translate(0, 0) rotate(0deg)";
-          span.style.opacity = "1";
-        }, (text.length - index) * 80);
-      });
-    }, 4000);
+      if (blockRect.top < triggerBottom) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  setInterval(waveExplode, 8000);
-  waveExplode();
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
         `

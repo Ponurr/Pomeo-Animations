@@ -6,37 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="blur-text">POMEOSPACE</p>
+<div class="block5"></div>
 
         `,
         scss: `
-  .blur-text span {
-        display: inline-block;
-        transition: filter 0.2s, opacity 0.2s;
-      }
+  .block5 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.5s ease-in-out, opacity 0.5s;
+        opacity: 0;
+        transform: skewX(-20deg);
+    }
+    
+    .block5.active {
+        opacity: 1;
+        transform: skewX(0);
+    }
+    
       
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".blur-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block5");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  setInterval(() => {
-    document.querySelectorAll(".blur-text span").forEach(span => {
-      span.style.filter = Math.random() > 0.5 ? "blur(3px)" : "blur(0px)";
-      span.style.opacity = Math.random() > 0.5 ? "0.5" : "1";
-    });
-  }, 300);
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
-
 
         `
     };

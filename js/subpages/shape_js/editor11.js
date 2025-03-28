@@ -6,43 +6,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="glitch-text">POMEOSPACE</p>
+ <div class="block11"></div>
 
         `,
         scss: `
-  .glitch-text span {
-        display: inline-block;
-        transition: transform 0.1s, color 0.1s;
-      }
+   .block11 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.block11.active {
+    opacity: 1;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
       
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".glitch-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block11");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  setInterval(() => {
-    document.querySelectorAll(".glitch-text span").forEach(span => {
-      if (Math.random() > 0.7) {
-        let x = (Math.random() - 0.5) * 10;
-        let y = (Math.random() - 0.5) * 10;
-        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
-        span.style.color = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
       } else {
-        span.style.transform = "translate(0, 0)";
-        span.style.color = "";
+          block.classList.remove("active");
       }
-    });
-  }, 100);
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

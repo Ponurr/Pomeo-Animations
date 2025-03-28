@@ -6,55 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const defaultCodes = {
         html: `
-<p class="fire-text">POMEOSPACE</p>
+ <div class="block10"></div>
 
         `,
         scss: `
   
-  .fire-text span {
-        display: inline-block;
-        transition: transform 1s ease-out, opacity 1s ease-out;
-      }
+   .block10 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.block10.active {
+    opacity: 1;
+    transform: translateX(0);
+}
         `,
         js: `
-      document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".fire-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+     document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block10");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  function explodeAndReset() {
-    document.querySelectorAll(".fire-text span").forEach((span, index) => {
-      let x = (Math.random() - 0.5) * 50; // Mniejszy rozrzut
-      let y = (Math.random() - 0.5) * 80;
-      let rotation = Math.random() * 40 - 20;
-
-      setTimeout(() => {
-        span.style.transition = "transform 1s ease-out, opacity 1s ease-out";
-        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
-        span.style.opacity = "0";
-      }, index * 100); // Opóźnienie dla płynności
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".fire-text span").forEach((span, index) => {
-        setTimeout(() => {
-          span.style.transition = "transform 1s ease-in, opacity 1s ease-in";
-          span.style.transform = "translate(0, 0) rotate(0deg)";
-          span.style.opacity = "1";
-        }, index * 50);
-      });
-    }, 4000); // Powrót po 4 sekundach
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  setInterval(explodeAndReset, 8000); // Efekt powtarza się co 8 sekund
-  explodeAndReset(); 
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

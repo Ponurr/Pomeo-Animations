@@ -5,57 +5,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const defaultCodes = {
         html: `
-<p class="vortex-text">POMEOSPACE</p>
+ <div class="block14"></div>
 
         `,
         scss: `
-  .vortex-text span {
-        display: inline-block;
-        transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
-      }
-      
+  .block14 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+    }
+    
+    .block14.active {
+        opacity: 1;
+        animation: teleport-fade 1s ease-in-out forwards;
+    }
+    
+    @keyframes teleport-fade {
+        0% { transform: scale(1); opacity: 1; }
+        40% { transform: scale(0.1); opacity: 0; }
+        50% { transform: translateX(200px) translateY(-200px) scale(0.1); opacity: 0; }
+        90% { transform: translateX(200px) translateY(-200px) scale(1.1); opacity: 1; }
+        100% { transform: translateX(200px) translateY(-200px) scale(1); opacity: 1; }
+    }
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".vortex-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block14");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
 
-  function vortexEffect() {
-    document.querySelectorAll(".vortex-text span").forEach((span, index) => {
-      let angle = index * 15;
-      let radius = index * 5;
-      let x = Math.cos(angle) * radius;
-      let y = Math.sin(angle) * radius;
-
-      setTimeout(() => {
-        span.style.transition = "transform 1.5s ease-in-out, opacity 1.5s ease-in-out";
-        span.style.transform = (!!linijka do skopiowania z kodu strony bo nie da sie jej tu wkleić!!)
-        span.style.opacity = "0";
-      }, index * 100);
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".vortex-text span").forEach((span, index) => {
-        setTimeout(() => {
-          span.style.transition = "transform 1.5s ease-in-out, opacity 1.5s ease-in-out";
-          span.style.transform = "translate(0, 0) rotate(0deg)";
-          span.style.opacity = "1";
-        }, index * 80);
-      });
-    }, 4000);
+      if (blockRect.top < triggerBottom) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  setInterval(vortexEffect, 8000);
-  vortexEffect();
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

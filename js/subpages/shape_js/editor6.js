@@ -6,49 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="looping-text">POMEOSPACE</p>
+ <div class="block6"></div>
 
         `,
         scss: `
-  .looping-text span {
-        display: inline-block;
-        transform: translateX(-20px);
+ .block6 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.6s ease-in-out, opacity 0.6s;
         opacity: 0;
-        transition: transform 0.5s, opacity 0.5s;
-      }
+        transform: rotateY(90deg);
+    }
+    
+    .block6.active {
+        opacity: 1;
+        transform: rotateY(0);
+    }
       
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".looping-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block6");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-    setTimeout(() => {
-      span.style.transform = "translateX(0)";
-      span.style.opacity = "1";
-    }, index * 100);
-  });
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
 
-  setInterval(() => {
-    document.querySelectorAll(".looping-text span").forEach((span, index) => {
-      setTimeout(() => {
-        span.style.transform = "translateX(-20px)";
-        span.style.opacity = "0";
-      }, index * 100);
-      setTimeout(() => {
-        span.style.transform = "translateX(0)";
-        span.style.opacity = "1";
-      }, index * 100 + 1000);
-    });
-  }, 3000);
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
         `
     };

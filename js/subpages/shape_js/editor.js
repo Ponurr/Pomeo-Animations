@@ -6,29 +6,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor__animation-area__text">POMEOSPACE</div>
+ <div class="block1"></div>
         `,
         scss: `
-.editor__animation-area__text {
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    animation: fadeIn 2s infinite;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
+ .block1 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: transform 0.5s ease-in-out, opacity 0.5s;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    
+    .block1.active {
+        opacity: 1;
+        transform: scale(1.2);
+    }
         `,
         js: `
-function animateText() {
-    const element = document.querySelector('.editor__animation-area__text');
-    element.style.opacity = (element.style.opacity === '0' || !element.style.opacity) ? '1' : '0';
-    setTimeout(animateText, 1000);
-}
-animateText();
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block1");
+
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
+
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
+});
         `
     };
 
