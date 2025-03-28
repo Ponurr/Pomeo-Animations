@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "ponur";
+  src: url("../../design/fonts/PPObjectSans-Heavy.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ponur2";
+  src: url("../../design/fonts/Aceh-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.title {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-left: -10vw;
+  margin-top: 4vw;
+  justify-content: center;
+  z-index: 10;
+
+  .title-content {
+    position: relative;
+    text-align: center;
+    span {
+      position: absolute;
+      top: -8.3vw;
+      left: 30vw;
+      font-family: "ponur";
+      font-size: 2vw;
+      color: #000000;
+      text-align: center;
+      animation: effect 2s infinite ease-in-out;
+    }
+    span:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      line-height: 4.2vw;
+      left: 30%;
+      top: 50%;
+      animation: effect 7.5s linear infinite;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes effect {
+  0% {
+    content: "P";
+  }
+  5% {
+    content: "PO";
+  }
+  10% {
+    content: "POM";
+  }
+  15% {
+    content: "PO ";
+  }
+  20% {
+    content: "POM";
+  }
+  25% {
+    content: "POME";
+  }
+  30% {
+    content: "POMEO";
+  }
+  35% {
+    content: "POMEOA";
+  }
+  40% {
+    content: "POMEO ";
+  }
+
+  45% {
+    content: "POMEOA ";
+  }
+  50% {
+    content: "POMEOAN ";
+  }
+  55% {
+    content: "POMEOANI";
+  }
+  60% {
+    content: "POMEOANIM";
+  }
+  65% {
+    content: "POMEOANIMA";
+  }
+  70% {
+    content: "POMEOANIM";
+  }
+  75% {
+    content: "POMEOANIMA";
+  }
+  80% {
+    content: "POMEOANIMAT";
+  }
+  85% {
+    content: "POMEOANIMATI";
+  }
+  90% {
+    content: "POMEOANIMATIO";
+  }
+  95% {
+    content: "POMEOANIMATION";
+  }
+
+  100% {
+    content: "POMEOANIMATIONS";
+  }
+}
