@@ -6,77 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<div class="editor14__animation-area__text">
-            <span>POMEO</span>
-            <span>POMEO</span>
-</div>
+  <div class="block1"></div>
         `,
         scss: `
-.editor14__animation-area__text {
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-
-
-    span{
-        position: absolute;
-        transform: translate(-50%, -50%);
-          width: 35vw;
-          font-size: 2.8vw;
-          font-family: "ponur";
-          font-weight: 300;
-          letter-spacing: 0.12vw;
-          text-transform: uppercase;
-         
-          left: 24.5vw;
-          
-          animation: effect 15s linear infinite;
-          &:nth-child(1){
-            color: transparent;
-            -webkit-text-stroke: 0.18vw #ffffff;
-
-          }
-          &:nth-child(2){
-
-            color: #ffffff;
-            animation: animate 4s ease-in-out infinite;
-          }
-      }
+.block14 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transform-style: preserve-3d;
+        animation: magicAppear 1.5s ease-out forwards;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
      
-
-      @keyframes animate {
-        0%,
-        100% {
-          clip-path: polygon(
-            0% 45%,
-            16% 44%,
-            33% 50%,
-            54% 60%,
-            70% 61%,
-            84% 59%,
-            100% 52%,
-            100% 100%,
-            0% 100%
-          );
-        }
       
-        50% {
-          clip-path: polygon(
-            0% 60%,
-            15% 65%,
-            34% 66%,
-            51% 62%,
-            67% 50%,
-            84% 45%,
-            100% 46%,
-            100% 100%,
-            0% 100%
-          );
+   
+      }
+      
+     
+      @keyframes magicAppear {
+        0% {
+          transform: scale(0) rotateY(-180deg) translateY(-50px);
+          opacity: 0;
+          filter: blur(10px);
+        }
+        40% {
+          transform: scale(1.2) rotateY(20deg) translateY(10px);
+          opacity: 0.7;
+          filter: blur(5px);
+        }
+        70% {
+          transform: scale(0.9) rotateY(-10deg) translateY(-5px);
+          opacity: 0.9;
+          filter: blur(2px);
+        }
+        100% {
+          transform: scale(1) rotateY(0deg) translateY(0);
+          opacity: 1;
+          filter: blur(0);
         }
       }
-    }    
  
         `,
         js: `
