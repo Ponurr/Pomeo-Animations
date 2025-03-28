@@ -6,91 +6,56 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const defaultCodes = {
         html: `
-<div class="glitch-typewriter">
-                    <span id="glitch__text"></span>
-                  </div>
+ <div class="block15"></div>
 
         `,
         scss: `
-  .glitch-typewriter {
-        font-family: monospace;
-        font-size: 2rem;
-        color: #fff;
-        background: #000;
-        padding: 1rem;
-        width: fit-content;
+ .block15 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
         overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-      
-        &::after {
-          content: '|';
-          position: absolute;
-          right: 0;
-          animation: blink 0.7s infinite;
-        }
-      
-        @keyframes blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-      
-        .glitch-letter {
-          display: inline-block;
-          position: relative;
-      
-          &::before, &::after {
-            content: attr(data-char);
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #0ff;
-            opacity: 0.6;
-            transform: translateX(1px);
-          }
-      
-          &::after {
-            color: #f0f;
-            transform: translateX(-1px);
-          }
-        }
-      }
+        position: relative; 
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+    }
+    
+    .block15.active {
+        opacity: 1;
+        animation: wave-distortion 1.2s ease-in-out forwards;
+    }
+    
+    @keyframes wave-distortion {
+        0% { transform: scale(1, 1); }
+        25% { transform: scale(1.3, 0.7); }
+        50% { transform: scale(0.7, 1.3); }
+        75% { transform: scale(1.2, 0.8); }
+        100% { transform: scale(1, 1); }
+    }
       
 
         `,
         js: `
-const text = "POMEOSPACE";
-const container = document.getElementById("glitch__text");
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block15");
 
-function typeGlitch(callback) {
-  container.innerHTML = "";
-  let i = 0;
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
 
-  function type() {
-    if (i < text.length) {
-      const char = text[i];
-      const span = document.createElement("span");
-      span.className = "glitch-letter";
-      span.setAttribute("data-char", char);
-      span.textContent = char;
-      container.appendChild(span);
-      i++;
-      setTimeout(type, 80 + Math.random() * 100);
-    } else {
-      // Po zakończeniu pisania – czekaj 5s i zresetuj
-      setTimeout(() => {
-        container.innerHTML = "";
-        // wywołujemy ponownie typeGlitch – zapętlamy animację
-        typeGlitch(callback);
-      }, 4000);
-    }
+      if (blockRect.top < triggerBottom) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  type();
-}
-
-// Startujemy zapętloną animację
-typeGlitch();
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
+});
 
 
 

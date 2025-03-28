@@ -6,36 +6,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="shaking-text">POMEOSPACE</p>
+<div class="block4"></div>
 
         `,
         scss: `
- .shaking-text span {
-        display: inline-block;
-        transition: transform 0.1s;
-      }
+    .block4 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.5s ease-out, opacity 0.5s;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    .block4.active {
+        opacity: 1;
+        animation: bounce 0.5s ease-out forwards;
+    }
+    
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+    }
+    
+     
       
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".shaking-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block4");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  setInterval(() => {
-    document.querySelectorAll(".shaking-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 10;
-      let y = (Math.random() - 0.5) * 10;
-    (!!!BRAKUJE JEDNEJ LINIJKI BO JEST NIE MOŻNA JEJ TU WKLEIĆ WEJSC DO KODU!!)
-    });
-  }, 100);
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
 
 

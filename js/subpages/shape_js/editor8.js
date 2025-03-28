@@ -6,48 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="explode-text">POMEOSPACE (click)</p>
+ <div class="block8"></div>
 
         `,
         scss: `
-  .explode-text span {
-        display: inline-block;
-        transition: transform 0.5s ease-out, opacity 0.5s;
-      }
+  .block8 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 1s ease-in-out, opacity 1s;
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    
+    .block8.active {
+        opacity: 1;
+        transform: rotate(0);
+    }
+      
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".explode-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block8");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  textElement.addEventListener("click", () => {
-    document.querySelectorAll(".explode-text span").forEach(span => {
-      let x = (Math.random() - 0.5) * 300;
-      let y = (Math.random() - 0.5) * 300;
-      let rotation = Math.random() * 720;
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
 
-      span.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      span.style.transform = (!!brakuje linijki bo nie da sie jej wkleić!!)
-      span.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll(".explode-text span").forEach(span => {
-        span.style.transition = "transform 0.5s ease-in, opacity 0.5s ease-in";
-        span.style.transform = "translate(0, 0) rotate(0deg)";
-        span.style.opacity = "1";
-      });
-    }, 4000); // Powrót po 4 sekundach
-  });
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

@@ -6,34 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
    
     const defaultCodes = {
         html: `
-<p class="wave-text">POMEOSPACE</p>
+    <div class="block2"></div>
 
         `,
         scss: `
- @keyframes wave {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-      
-      .wave-text span {
-        display: inline-block;
-        animation: wave 1.5s infinite ease-in-out;
-        animation-delay: calc(var(--delay) * 0.1s);
-      }
+ .block2 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: transform 0.8s ease-in-out, opacity 0.8s;
+    opacity: 0;
+    transform: translateX(-100px) rotate(-90deg);
+}
+
+.block2.active {
+    opacity: 1;
+    transform: translateX(0) rotate(360deg);
+}
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-    const textElement = document.querySelector(".wave-text");
-    const text = textElement.innerText;
-    textElement.innerHTML = "";
-    
-    text.split("").forEach((char, index) => {
-      let span = document.createElement("span");
-      span.textContent = char;
-      span.style.setProperty("--delay", index);
-      textElement.appendChild(span);
-    });
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block2");
+
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
+
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
+});
+
 
         `
     };

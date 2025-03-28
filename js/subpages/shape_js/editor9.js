@@ -6,37 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="wavy-3d-text">PONURPONURPONUR (SCROLL)</p>
+ <div class="block9"></div>
 
         `,
         scss: `
- .wavy-3d-text span {
-        display: inline-block;
-        transform: translate3d(0, 0, 0);
-        transition: transform 0.1s;
-      }
+ .block9 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    .block9.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".wavy-3d-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block9");
 
-  text.split("").forEach((char, index) => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-    span.style.transform = (!!linijka do skopiowania z kodu bo nie da się jej tu wkleić!!)
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  window.addEventListener("scroll", () => {
-    let scrollPos = window.scrollY / 10;
-    document.querySelectorAll(".wavy-3d-text span").forEach((span, index) => {
-      span.style.transform = (!!linijka do skopiowania z kodu bo nie da się jej tu wkleić!!)
-    });
-  });
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
+
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
 

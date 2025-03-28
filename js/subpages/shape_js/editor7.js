@@ -6,48 +6,53 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-<p class="magnetic-text">POMEOSPACE (mouse)</p>
+ <div class="block7"></div>
 
         `,
         scss: `
 
 
-.magnetic-text span {
-        display: inline-block;
-        transition: transform 0.2s ease-out;
-      }
+.block7 {
+        width: 10vw;
+        height: 10vw;
+        background-color: purple;
+        display: block;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative; 
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    .block7.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
         `,
         js: `
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.querySelector(".magnetic-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = "";
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block7");
 
-  text.split("").forEach(char => {
-    let span = document.createElement("span");
-    span.textContent = char;
-    textElement.appendChild(span);
-  });
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
+      const triggerTop = window.innerHeight * 0.2;
 
-  document.addEventListener("mousemove", (event) => {
-    document.querySelectorAll(".magnetic-text span").forEach(span => {
-      let rect = span.getBoundingClientRect();
-      let dx = event.clientX - (rect.left + rect.width / 2);
-      let dy = event.clientY - (rect.top + rect.height / 2);
-      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (blockRect.top < triggerBottom && blockRect.bottom > triggerTop) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
+  }
 
-      let force = Math.min(100 / distance, 3);
-      span.style.transform = (!!brakuje tu jednej lini bo nie da sie jej tu wkleic!!)
-    });
-  });
-
-  document.addEventListener("mouseleave", () => {
-    document.querySelectorAll(".magnetic-text span").forEach(span => {
-      span.style.transform = "translate(0, 0)";
-    });
-  });
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
 });
+
 
 
         `
