@@ -90,7 +90,7 @@
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
-  animation: wave3DD 1.5s ease-in-out forwards;
+  animation: wave3DD 2s ease-in-out forwards infinite;
 }
 @keyframes wave3DD {
   0% {

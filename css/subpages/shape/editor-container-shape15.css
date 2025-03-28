@@ -89,7 +89,7 @@
   overflow: hidden;
   position: relative;
   transform-style: preserve-3d;
-  animation: superEnter 1.2s ease-out forwards;
+  animation: superEnter 2s ease-out forwards infinite;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 @keyframes superEnter {

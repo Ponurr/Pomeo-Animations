@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-  <div class="block1"></div>
+  <div class="block7"></div>
         `,
         scss: `
 .block7 {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         position: relative; 
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         transform-style: preserve-3d;
-        animation: glitchAppear 1.5s ease-out forwards, glitchShadow 1.2s ease-in-out forwards;
+        animation: glitchAppear 1.5s ease-out forwards infinite, glitchShadow 1.2s ease-in-out forwards infinite;
       
         
       }

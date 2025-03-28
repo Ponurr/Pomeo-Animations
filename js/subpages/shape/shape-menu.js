@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animation: fancyEnter 1s ease-out forwards;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         transform-style: preserve-3d;
-        transition: transform 0.6s ease, box-shadow 0.6s ease;
+        transition: transform 2s ease infinite, box-shadow 2s ease infinite;
       
         &:hover {
           transform: scale(1.15) rotateX(3deg) rotateY(3deg);

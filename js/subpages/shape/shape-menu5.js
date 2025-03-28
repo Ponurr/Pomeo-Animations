@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Przykładowe kody dla każdej zakładki (puste pola, które możesz wypełnić ręcznie)
     const defaultCodes = {
         html: `
-  <div class="block1"></div>
+  <div class="block5"></div>
         `,
         scss: `
  .block5 {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         border-radius: 1.5rem;
         overflow: hidden;
         position: relative; 
-        animation: flipIn 1s ease-out forwards;
+        animation: flipIn 2s ease-out forwards infinite;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       
       
