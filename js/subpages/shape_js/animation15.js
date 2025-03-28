@@ -1,32 +1,17 @@
-const text = "POMEOSPACE";
-const container = document.getElementById("glitch__text");
+document.addEventListener("DOMContentLoaded", function () {
+  const block = document.querySelector(".block15");
 
-function typeGlitch(callback) {
-  container.innerHTML = "";
-  let i = 0;
+  function checkPosition() {
+      const blockRect = block.getBoundingClientRect();
+      const triggerBottom = window.innerHeight * 0.8;
 
-  function type() {
-    if (i < text.length) {
-      const char = text[i];
-      const span = document.createElement("span");
-      span.className = "glitch-letter";
-      span.setAttribute("data-char", char);
-      span.textContent = char;
-      container.appendChild(span);
-      i++;
-      setTimeout(type, 80 + Math.random() * 100);
-    } else {
-      // Po zakończeniu pisania – czekaj 5s i zresetuj
-      setTimeout(() => {
-        container.innerHTML = "";
-        // wywołujemy ponownie typeGlitch – zapętlamy animację
-        typeGlitch(callback);
-      }, 4000);
-    }
+      if (blockRect.top < triggerBottom) {
+          block.classList.add("active");
+      } else {
+          block.classList.remove("active");
+      }
   }
 
-  type();
-}
-
-// Startujemy zapętloną animację
-typeGlitch();
+  window.addEventListener("scroll", checkPosition);
+  checkPosition();
+});

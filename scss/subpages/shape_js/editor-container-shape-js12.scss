@@ -96,30 +96,15 @@
         border-radius: 1.5rem;
         overflow: hidden;
         position: relative; 
-        animation: shakeIn 2s ease-out forwards infinite;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      
-      }
-      
-      @keyframes shakeIn {
-        0% {
-          transform: translateX(-100px);
-          opacity: 0;
-        }
-        30% {
-          transform: translateX(10px);
-          opacity: 1;
-        }
-        50% {
-          transform: translateX(-5px);
-        }
-        70% {
-          transform: translateX(2px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
+        transition: transform 0.7s ease-in-out, opacity 0.7s;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    .block12.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
     
       
     }
