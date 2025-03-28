@@ -60,12 +60,12 @@
 
 .pomeospace__content-box-laptop {
   position: absolute;
-  margin-top: -24.5vw;
-  margin-left: 3vw;
+  margin-top: -25.5vw;
+  margin-left: 1.5vw;
 }
 .pomeospace__content-box-laptop img {
-  width: 29vw;
-  height: 17.5vw;
+  width: 32vw;
+  height: 19vw;
 }
 
 .pomeospace__content-box-title {
