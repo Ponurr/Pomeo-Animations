@@ -28,6 +28,10 @@
 .content .content__text span {
   color: #49006E;
 }
+.content .content__text span img {
+  height: 1.2vw;
+  width: 1.2vw;
+}
 
 .text-anim-explode {
   opacity: 0;

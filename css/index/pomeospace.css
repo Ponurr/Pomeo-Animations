@@ -24,30 +24,49 @@
   cursor: pointer;
   position: absolute;
   margin-top: -4vw;
-  margin-left: 12.5vw;
+  margin-left: 11.5vw;
   background-color: #E8E8E8;
-  height: 2.2vw;
-  width: 10vw;
+  height: 2.5vw;
+  width: 12vw;
   border: 0.15vw solid;
   border-color: #000000;
   border-radius: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.3vw;
+  transition: all 1s;
+}
+.pomeospace__content-box-link a {
+  text-decoration: none;
 }
 .pomeospace__content-box-link p {
   font-family: "ponur";
   color: black;
   font-size: 0.9vw;
 }
+.pomeospace__content-box-link i {
+  font-size: 1vw;
+  color: #000000;
+}
+.pomeospace__content-box-link i:hover {
+  color: #49006E;
+}
+
+.pomeospace__content-box-link:hover {
+  background-color: #e2e0e0;
+}
+.pomeospace__content-box-link:hover i {
+  color: #49006E;
+}
 
 .pomeospace__content-box-laptop {
   position: absolute;
-  margin-top: -24vw;
-  margin-left: 2.5vw;
+  margin-top: -24.5vw;
+  margin-left: 3vw;
 }
 .pomeospace__content-box-laptop img {
-  width: 30vw;
+  width: 29vw;
   height: 17.5vw;
 }
 
